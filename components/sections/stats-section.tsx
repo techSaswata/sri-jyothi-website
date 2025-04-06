@@ -13,7 +13,7 @@ const stats = [
   },
   {
     icon: <Award className="h-8 w-8" />,
-    value: "15+",
+    value: "25+",
     label: "Years Experience",
     description: "Delivering excellence in engineering services since 2008",
   },

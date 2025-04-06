@@ -13,7 +13,7 @@ const solutions = [
     title: "Manufacturing",
     description:
       "Comprehensive engineering solutions for the manufacturing industry to optimize production processes and improve efficiency.",
-    image: "/Web Pics/Web Pics/Equipment Pic-1.avif",
+    image: "/images/equipment.avif",
     features: [
       "Production line optimization",
       "Equipment maintenance and repair",
@@ -28,7 +28,7 @@ const solutions = [
     title: "Power Generation",
     description:
       "Specialized engineering services for power plants and energy generation facilities to ensure reliable and efficient operation.",
-    image: "/Web Pics/Web Pics/Services/condenser tubes replacement.jpg",
+    image: "/images/home-hero-2.jpg",
     features: [
       "Turbine maintenance and repair",
       "Generator overhaul services",
@@ -43,7 +43,7 @@ const solutions = [
     title: "Oil & Gas",
     description:
       "Tailored engineering solutions for the oil and gas industry to maintain equipment integrity and operational safety.",
-    image: "/Web Pics/Web Pics/Services/vacuum pump.jpg",
+    image: "/images/service1.jpg",
     features: [
       "Pipeline maintenance and repair",
       "Pump and compressor services",
@@ -58,7 +58,7 @@ const solutions = [
     title: "Infrastructure",
     description:
       "Engineering services for infrastructure projects to ensure structural integrity, safety, and longevity of public facilities.",
-    image: "/Web Pics/Web Pics/Services/firefighting pumps.jpg",
+    image: "/images/service3.jpg",
     features: [
       "Structural assessment",
       "Maintenance planning",

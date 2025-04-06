@@ -47,7 +47,7 @@ export default function AboutPage() {
             <div className="order-1 lg:order-2 relative">
               <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl border">
                 <Image
-                  src="/Web Pics/Web Pics/About us Header-1.jpg"
+                  src="/images/equipment.avif"
                   alt="About Sri Jyothi Engineering Services"
                   width={800}
                   height={600}
@@ -62,7 +62,7 @@ export default function AboutPage() {
               {/* Experience badge */}
               <div className="absolute top-8 -left-8 bg-primary text-white rounded-full p-6 shadow-lg">
                 <div className="text-center">
-                  <div className="text-3xl font-bold">15+</div>
+                  <div className="text-3xl font-bold">25+</div>
                   <div className="text-xs">Years Experience</div>
                 </div>
               </div>
@@ -86,7 +86,7 @@ export default function AboutPage() {
             <div>
               <div className="relative rounded-xl overflow-hidden shadow-lg">
                 <Image
-                  src="/Web Pics/Web Pics/Equipment Pic-1.avif"
+                  src="/images/banner.jpeg"
                   alt="Our History"
                   width={800}
                   height={600}

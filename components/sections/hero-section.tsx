@@ -76,7 +76,7 @@ export default function HeroSection() {
             {/* Stats */}
             <div className="mt-12 grid grid-cols-3 gap-4 text-center lg:text-left">
               <div>
-                <p className="text-3xl font-bold text-primary">15+</p>
+                <p className="text-3xl font-bold text-primary">25+</p>
                 <p className="text-sm text-muted-foreground">Years Experience</p>
               </div>
               <div>
@@ -99,7 +99,7 @@ export default function HeroSection() {
           >
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border">
               <Image
-                src="/Web Pics/Web Pics/Home page/Home-Header-1.webp"
+                src="/images/home-hero-1.webp"
                 alt="Industrial Engineering"
                 width={800}
                 height={600}

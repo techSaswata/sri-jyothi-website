@@ -13,7 +13,7 @@ const services = [
     title: "Repair Services",
     description:
       "Expert repair services for all types of industrial machinery and equipment to minimize downtime and maximize productivity.",
-    image: "/Web Pics/Web Pics/Services/Services-BFP1.jpg",
+    image: "/images/service4.jpg",
     link: "/services/repair",
   },
   {
@@ -21,7 +21,7 @@ const services = [
     title: "Spare Parts",
     description:
       "Quality spare parts for industrial equipment, ensuring optimal performance and longevity of your machinery.",
-    image: "/Web Pics/Web Pics/Spares/Impellers.jpg",
+    image: "/images/spares1.jpg",
     link: "/services/spare-parts",
   },
   {
@@ -29,7 +29,7 @@ const services = [
     title: "Energy Solutions",
     description:
       "Innovative energy-saving solutions to reduce operational costs and environmental impact of your industrial processes.",
-    image: "/Web Pics/Web Pics/Services/condenser tubes replacement.jpg",
+    image: "/images/service2.jpg",
     link: "/services/energy-solutions",
   },
   {
@@ -37,7 +37,7 @@ const services = [
     title: "3D Services",
     description:
       "Advanced 3D modeling, printing, and scanning services for prototyping, reverse engineering, and product development.",
-    image: "/Web Pics/Web Pics/3D scan-1.jpg",
+    image: "/images/3d-scan.jpg",
     link: "/services/3d-services",
   },
   {
@@ -45,7 +45,7 @@ const services = [
     title: "Maintenance",
     description:
       "Comprehensive preventive and corrective maintenance services to ensure smooth operation of your industrial equipment.",
-    image: "/Web Pics/Web Pics/Services/vacuum pump.jpg",
+    image: "/images/service1.jpg",
     link: "/services/maintenance",
   },
   {
@@ -53,7 +53,7 @@ const services = [
     title: "Consulting",
     description:
       "Expert consulting services for industrial engineering challenges, process optimization, and efficiency improvement.",
-    image: "/Web Pics/Web Pics/Services/Services-BFP-2.jpg",
+    image: "/images/service3.jpg",
     link: "/services/consulting",
   },
 ]

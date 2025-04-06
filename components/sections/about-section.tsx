@@ -94,7 +94,7 @@ export default function AboutSection() {
               <div className="space-y-3 mb-8">
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                  <span>15+ years of industry experience</span>
+                  <span>25+ years of industry experience</span>
                 </div>
                 <div className="flex items-start space-x-3">
                   <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
@@ -128,7 +128,7 @@ export default function AboutSection() {
           <div className="relative">
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl border">
               <Image
-                src="/Web Pics/Web Pics/About us Header-1.jpg"
+                src="/images/equipment.avif"
                 alt="About Sri Jyothi Engineering Services"
                 width={600}
                 height={800}
@@ -143,7 +143,7 @@ export default function AboutSection() {
             {/* Experience badge */}
             <div className="absolute top-8 -left-8 bg-primary text-white rounded-full p-6 shadow-lg">
               <div className="text-center">
-                <div className="text-3xl font-bold">15+</div>
+                <div className="text-3xl font-bold">25+</div>
                 <div className="text-xs">Years Experience</div>
               </div>
             </div>
