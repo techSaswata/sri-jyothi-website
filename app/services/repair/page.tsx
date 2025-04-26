@@ -45,7 +45,7 @@ export default function RepairServicesPage() {
             <div className="relative">
               <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl border">
                 <Image
-                  src="/placeholder.svg?height=600&width=800"
+                  src="/Web Pics1/Services/Condenser vacuum Pump/vacuum pump.jpg"
                   alt="Industrial Equipment Repair"
                   width={800}
                   height={600}

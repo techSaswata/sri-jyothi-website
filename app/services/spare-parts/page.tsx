@@ -45,7 +45,7 @@ export default function SparePartsPage() {
             <div className="relative">
               <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl border">
                 <Image
-                  src="/placeholder.svg?height=600&width=800"
+                  src="/Web Pics1/Equipment/CEP axial thrust pads.jpg"
                   alt="Industrial Spare Parts"
                   width={800}
                   height={600}

@@ -10,6 +10,9 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from "lucide-react"
 import { motion } from "framer-motion"
+import Image from "next/image"
+import Link from "next/link"
+import { Check } from "lucide-react"
 
 export default function ContactPage() {
   const [formSubmitted, setFormSubmitted] = useState(false)
@@ -45,332 +48,229 @@ export default function ContactPage() {
         <div className="container">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-              Get in <span className="gradient-text">Touch</span>
+              Get In <span className="gradient-text">Touch</span>
             </h1>
-            <p className="text-lg text-muted-foreground mb-6">
-              Have questions or need assistance? Reach out to us and our team will get back to you as soon as possible.
+            <p className="text-lg text-muted-foreground mb-8">
+              Reach out to Sri Jyothi Engineering Services for engineering solutions tailored to your industrial needs. Our team of experts is ready to assist you.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Contact Information Section */}
+      {/* Contact Information */}
       <section className="py-16 bg-background">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="border shadow-sm hover:shadow-md transition-all duration-300">
-              <CardContent className="p-6 flex flex-col items-center text-center">
-                <div className="p-4 rounded-full bg-primary/10 text-primary mb-4">
-                  <Phone className="h-8 w-8" />
-                </div>
-                <h3 className="text-xl font-bold mb-2">Phone</h3>
-                <p className="text-muted-foreground mb-4">Our team is available to assist you during business hours.</p>
-                <a href="tel:+919876543210" className="text-primary hover:underline font-medium">
-                  +91 9876543210
-                </a>
-                <a href="tel:+919876543211" className="text-primary hover:underline font-medium mt-1">
-                  +91 9876543211
-                </a>
-              </CardContent>
-            </Card>
-
-            <Card className="border shadow-sm hover:shadow-md transition-all duration-300">
-              <CardContent className="p-6 flex flex-col items-center text-center">
-                <div className="p-4 rounded-full bg-primary/10 text-primary mb-4">
-                  <Mail className="h-8 w-8" />
-                </div>
-                <h3 className="text-xl font-bold mb-2">Email</h3>
-                <p className="text-muted-foreground mb-4">Send us an email and we'll respond as soon as possible.</p>
-                <a
-                  href="mailto:info@srijyothiengineeringservices.com"
-                  className="text-primary hover:underline font-medium break-all"
-                >
-                  info@srijyothiengineeringservices.com
-                </a>
-                <a
-                  href="mailto:support@srijyothiengineeringservices.com"
-                  className="text-primary hover:underline font-medium mt-1 break-all"
-                >
-                  support@srijyothiengineeringservices.com
-                </a>
-              </CardContent>
-            </Card>
-
-            <Card className="border shadow-sm hover:shadow-md transition-all duration-300">
-              <CardContent className="p-6 flex flex-col items-center text-center">
-                <div className="p-4 rounded-full bg-primary/10 text-primary mb-4">
-                  <MapPin className="h-8 w-8" />
-                </div>
-                <h3 className="text-xl font-bold mb-2">Location</h3>
-                <p className="text-muted-foreground mb-4">
-                  Visit our office to discuss your engineering needs in person.
-                </p>
-                <address className="not-italic text-center">
-                  123 Engineering Way,
-                  <br />
-                  Industrial Area,
-                  <br />
-                  Hyderabad, Telangana,
-                  <br />
-                  India - 500001
-                </address>
-              </CardContent>
-            </Card>
-
-            <Card className="border shadow-sm hover:shadow-md transition-all duration-300">
-              <CardContent className="p-6 flex flex-col items-center text-center">
-                <div className="p-4 rounded-full bg-primary/10 text-primary mb-4">
-                  <Clock className="h-8 w-8" />
-                </div>
-                <h3 className="text-xl font-bold mb-2">Business Hours</h3>
-                <p className="text-muted-foreground mb-4">Our office is open during the following hours.</p>
-                <div className="space-y-2">
-                  <p className="flex justify-between gap-4">
-                    <span className="font-medium">Monday - Friday:</span>
-                    <span>9:00 AM - 6:00 PM</span>
-                  </p>
-                  <p className="flex justify-between gap-4">
-                    <span className="font-medium">Saturday:</span>
-                    <span>10:00 AM - 2:00 PM</span>
-                  </p>
-                  <p className="flex justify-between gap-4">
-                    <span className="font-medium">Sunday:</span>
-                    <span>Closed</span>
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Form and Map Section */}
-      <section className="py-16 bg-gradient-secondary">
-        <div className="container">
           <div className="grid md:grid-cols-2 gap-12">
-            {/* Contact Form */}
             <div>
-              <h2 className="text-3xl font-bold mb-6">Send Us a Message</h2>
+              <h2 className="text-3xl font-bold mb-6">Contact Information</h2>
               <p className="text-muted-foreground mb-8">
-                Fill out the form below and our team will get back to you as soon as possible.
+                Our engineering teams are available to answer your queries and provide expert assistance for your industrial engineering needs.
               </p>
 
-              {formSubmitted ? (
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-6 text-center"
-                >
-                  <div className="mx-auto w-16 h-16 bg-green-100 dark:bg-green-800/30 rounded-full flex items-center justify-center mb-4">
-                    <CheckCircle className="h-8 w-8 text-green-600 dark:text-green-400" />
+              <div className="space-y-8">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-full bg-primary/10 text-primary">
+                    <MapPin className="h-6 w-6" />
                   </div>
-                  <h3 className="text-2xl font-bold text-green-700 dark:text-green-400 mb-2">
-                    Message Sent Successfully!
-                  </h3>
-                  <p className="text-green-600 dark:text-green-300 mb-6">
-                    Thank you for contacting us. We've received your message and will respond shortly.
-                  </p>
-                  <Button
-                    variant="outline"
-                    onClick={() => {
-                      setFormSubmitted(false)
-                      setFormData({
-                        name: "",
-                        email: "",
-                        phone: "",
-                        service: "",
-                        message: "",
-                      })
-                    }}
-                  >
-                    Send Another Message
-                  </Button>
-                </motion.div>
-              ) : (
-                <Card className="shadow-md">
-                  <CardContent className="p-6">
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="space-y-2">
-                          <label htmlFor="name" className="text-sm font-medium">
-                            Full Name <span className="text-red-500">*</span>
-                          </label>
-                          <Input
-                            id="name"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleChange}
-                            placeholder="Enter your full name"
-                            required
-                          />
-                        </div>
-                        <div className="space-y-2">
-                          <label htmlFor="email" className="text-sm font-medium">
-                            Email Address <span className="text-red-500">*</span>
-                          </label>
-                          <Input
-                            id="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            type="email"
-                            placeholder="Enter your email"
-                            required
-                          />
-                        </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-2">Our Locations</h3>
+                    <div className="space-y-4">
+                      <div>
+                        <h4 className="font-medium">Vijaywada:</h4>
+                        <p className="text-muted-foreground">
+                          D.No : 2-306/A, Main Road, Polavaram (Po),<br />
+                          Chatrai (Md), Eluru (Dt)-521214. AP
+                        </p>
                       </div>
-
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="space-y-2">
-                          <label htmlFor="phone" className="text-sm font-medium">
-                            Phone Number
-                          </label>
-                          <Input
-                            id="phone"
-                            name="phone"
-                            value={formData.phone}
-                            onChange={handleChange}
-                            placeholder="Enter your phone number"
-                          />
-                        </div>
-                        <div className="space-y-2">
-                          <label htmlFor="service" className="text-sm font-medium">
-                            Service Interested In
-                          </label>
-                          <Select value={formData.service} onValueChange={handleSelectChange}>
-                            <SelectTrigger id="service">
-                              <SelectValue placeholder="Select a service" />
-                            </SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value="repair">Repair Services</SelectItem>
-                              <SelectItem value="spare-parts">Spare Parts</SelectItem>
-                              <SelectItem value="energy">Energy Solutions</SelectItem>
-                              <SelectItem value="3d">3D Services</SelectItem>
-                              <SelectItem value="maintenance">Maintenance</SelectItem>
-                              <SelectItem value="consulting">Consulting</SelectItem>
-                              <SelectItem value="other">Other</SelectItem>
-                            </SelectContent>
-                          </Select>
-                        </div>
+                      <div>
+                        <h4 className="font-medium">Hyderabad:</h4>
+                        <p className="text-muted-foreground">
+                          Plot No. 61/D, Phase-1, I.D.A.,<br />
+                          Jeedimetla, Hyderabad – 500055
+                        </p>
                       </div>
+                    </div>
+                  </div>
+                </div>
 
-                      <div className="space-y-2">
-                        <label htmlFor="message" className="text-sm font-medium">
-                          Message <span className="text-red-500">*</span>
-                        </label>
-                        <Textarea
-                          id="message"
-                          name="message"
-                          value={formData.message}
-                          onChange={handleChange}
-                          placeholder="Tell us about your project or inquiry"
-                          rows={6}
-                          required
-                        />
-                      </div>
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-full bg-primary/10 text-primary">
+                    <Phone className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-2">Phone Numbers</h3>
+                    <p className="text-muted-foreground">
+                      +91 77229 44331<br />
+                      +91 96303 11331
+                    </p>
+                  </div>
+                </div>
 
-                      <Button type="submit" className="w-full md:w-auto" size="lg">
-                        Send Message
-                        <Send className="ml-2 h-4 w-4" />
-                      </Button>
-                    </form>
-                  </CardContent>
-                </Card>
-              )}
-            </div>
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-full bg-primary/10 text-primary">
+                    <Mail className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-2">Email Addresses</h3>
+                    <p className="text-muted-foreground">
+                      sjes331@gmail.com<br />
+                      techcom@srijyothi.com
+                    </p>
+                  </div>
+                </div>
 
-            {/* Map */}
-            <div>
-              <h2 className="text-3xl font-bold mb-6">Our Location</h2>
-              <p className="text-muted-foreground mb-8">
-                Visit our office to discuss your engineering needs in person. We're conveniently located in the
-                Industrial Area of Hyderabad.
-              </p>
-              <div className="rounded-xl overflow-hidden shadow-lg border h-[400px]">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243647.3176195767!2d78.24323135!3d17.4123487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb99daeaebd2c7%3A0xae93b78392bafbc2!2sHyderabad%2C%20Telangana%2C%20India!5e0!3m2!1sen!2sus!4v1649308456642!5m2!1sen!2sus"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-full bg-primary/10 text-primary">
+                    <Clock className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-2">Working Hours</h3>
+                    <p className="text-muted-foreground">
+                      Monday - Saturday: 9:00 AM - 6:00 PM<br />
+                      Sunday: Closed
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
+            
+            <div>
+              <Card className="border shadow-sm">
+                <CardContent className="p-6">
+                  <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
+                  <form className="space-y-6">
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <label htmlFor="firstName" className="text-sm font-medium">First Name</label>
+                        <Input id="firstName" placeholder="Your first name" />
+                      </div>
+                      <div className="space-y-2">
+                        <label htmlFor="lastName" className="text-sm font-medium">Last Name</label>
+                        <Input id="lastName" placeholder="Your last name" />
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <label htmlFor="email" className="text-sm font-medium">Email</label>
+                      <Input id="email" type="email" placeholder="Your email address" />
+                    </div>
+                    <div className="space-y-2">
+                      <label htmlFor="phone" className="text-sm font-medium">Phone</label>
+                      <Input id="phone" placeholder="Your phone number" />
+                    </div>
+                    <div className="space-y-2">
+                      <label htmlFor="subject" className="text-sm font-medium">Subject</label>
+                      <Input id="subject" placeholder="What is your message about?" />
+                    </div>
+                    <div className="space-y-2">
+                      <label htmlFor="message" className="text-sm font-medium">Message</label>
+                      <Textarea id="message" placeholder="Your message" className="h-32" />
+                    </div>
+                    <Button type="submit" className="w-full">
+                      Send Message
+                      <Send className="ml-2 h-4 w-4" />
+                    </Button>
+                  </form>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* Map Section */}
+      <section className="py-16 bg-gradient-secondary">
+        <div className="container">
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-3xl font-bold mb-4">Our Locations</h2>
+            <p className="text-muted-foreground">
+              Visit us at our facilities in Vijaywada and Hyderabad to discuss your engineering needs in person.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="rounded-xl overflow-hidden h-80 shadow-md">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3839.0123094852986!2d78.41986761478508!3d17.498738788013635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9125275fd261%3A0x2cb31a88eecfdafd!2sJeedimetla%2C%20Hyderabad%2C%20Telangana!5e0!3m2!1sen!2sin!4v1675430156371!5m2!1sen!2sin" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Hyderabad Office Location"
+              ></iframe>
+            </div>
+            <div className="rounded-xl overflow-hidden h-80 shadow-md">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30603.865589855426!2d81.06945312849376!3d16.916339141266303!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a36229b7dbdcbef%3A0x1d8c3a5ac2c18bab!2sPolavaram%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1675430199468!5m2!1sen!2sin" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Vijaywada Office Location"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
       <section className="py-16 bg-background">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="section-title mb-4">Frequently Asked Questions</h2>
-            <p className="section-subtitle">
-              Find answers to common questions about our services and how we can help you.
+            <h2 className="text-3xl font-bold mb-4">Why Choose Sri Jyothi Engineering Services?</h2>
+            <p className="text-muted-foreground">
+              With over 24 years of experience in industrial engineering, we offer reliable solutions tailored to your needs.
             </p>
           </div>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <Card className="border shadow-sm">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-3">What areas do you serve?</h3>
-                <p className="text-muted-foreground">
-                  We primarily serve clients in Hyderabad and across India. However, we also work with international
-                  clients on select projects. Contact us to discuss your specific location and requirements.
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="border shadow-sm hover:shadow-md transition-all duration-300">
+              <CardContent className="p-6 text-center">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Check className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">24+ Years of Expertise</h3>
+                <p className="text-sm text-muted-foreground">
+                  Extensive experience in industrial engineering across various sectors
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="border shadow-sm">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-3">How quickly can you respond to emergency repair requests?</h3>
-                <p className="text-muted-foreground">
-                  We understand the critical nature of equipment downtime. Our emergency response team is available 24/7
-                  and typically responds within 2-4 hours depending on your location.
+            <Card className="border shadow-sm hover:shadow-md transition-all duration-300">
+              <CardContent className="p-6 text-center">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Check className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">Innovative Solutions</h3>
+                <p className="text-sm text-muted-foreground">
+                  Cost-effective and innovative approaches to complex engineering challenges
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="border shadow-sm">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-3">Do you provide warranties for your services?</h3>
-                <p className="text-muted-foreground">
-                  Yes, we provide warranties for all our repair services and spare parts. The warranty period varies
-                  depending on the service or product, typically ranging from 3 months to 1 year.
+            <Card className="border shadow-sm hover:shadow-md transition-all duration-300">
+              <CardContent className="p-6 text-center">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Check className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">Precision-Engineered</h3>
+                <p className="text-sm text-muted-foreground">
+                  Reliable components manufactured to exacting specifications
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="border shadow-sm">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-3">How do I request a quote for your services?</h3>
-                <p className="text-muted-foreground">
-                  You can request a quote by filling out the contact form on this page, calling our office, or sending
-                  an email. Please provide as much detail as possible about your requirements for an accurate quote.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border shadow-sm">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-3">What industries do you specialize in?</h3>
-                <p className="text-muted-foreground">
-                  We specialize in serving manufacturing, power generation, oil & gas, infrastructure, and heavy
-                  machinery industries. However, our engineering expertise can be applied to various other sectors as
-                  well.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border shadow-sm">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-3">Can you handle large-scale projects?</h3>
-                <p className="text-muted-foreground">
-                  Yes, we have the capacity and expertise to handle large-scale engineering projects. Our team has
-                  successfully completed numerous major projects for industrial clients across various sectors.
+            <Card className="border shadow-sm hover:shadow-md transition-all duration-300">
+              <CardContent className="p-6 text-center">
+                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Check className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">Customer-First Approach</h3>
+                <p className="text-sm text-muted-foreground">
+                  Tailored solutions designed to meet your specific requirements
                 </p>
               </CardContent>
             </Card>

@@ -17,39 +17,86 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
-import { Menu, ChevronDown, Phone } from "lucide-react"
+import { Menu, ChevronDown, Phone, Wrench, RefreshCw, Settings, ScanLine, Cog, Zap, Sparkles, RotateCcw, Scale, PenTool, Droplet } from "lucide-react"
 
-const services = [
+export const services = [
   {
-    title: "Repair Services",
-    href: "/services/repair",
-    description: "Professional repair services for industrial machinery and equipment",
+    title: "Engineering Services",
+    href: "/services/engineering",
+    description: "Reliable and professional engineering support to reduce downtime, improve safety, and handle changes smoothly as well",
+    image: "/images/service1.jpg",
+    icon: <Settings className="h-4 w-4 mr-1" />
+  },
+  {
+    title: "Reverse Engineering",
+    href: "/services/reverse-engineering",
+    description: "Fast and reliable solutions to reproduce spare parts that are hard to find or no longer available as well",
+    image: "/Web Pics1/Services/Reverse_Engineering.jpg",
+    icon: <RefreshCw className="h-4 w-4 mr-1" />
+  },
+  {
+    title: "Overhauling Services",
+    href: "/services/overhauling",
+    description: "Erection, commissioning, maintenance, and overhauling services for the entire lifecycle of industrial equipment as well",
+    image: "/images/service3.jpg",
+    icon: <Wrench className="h-4 w-4 mr-1" />
+  },
+  {
+    title: "3D Scanning",
+    href: "/services/3d-scanning",
+    description: "Precise digital models and technical drawings of existing mechanical components for spare parts development as well",
+    image: "/images/3d-scan.jpg",
+    icon: <ScanLine className="h-4 w-4 mr-1" />
   },
   {
     title: "Spare Parts",
     href: "/services/spare-parts",
-    description: "Quality spare parts for all types of industrial equipment",
+    description: "High-quality mechanical spares designed, manufactured, and delivered to keep your equipment running smoothly as well",
+    image: "/Web Pics1/Equipment/Turbine seals.jpg",
+    icon: <Cog className="h-4 w-4 mr-1" />
+  },
+  {
+    title: "Repair Services",
+    href: "/services/repair",
+    description: "Comprehensive repair, reconditioning, and refurbishment services for power and process industry equipment as well",
+    image: "/Web Pics1/Equipment/Vacuum pump Overhauling.jpg",
+    icon: <PenTool className="h-4 w-4 mr-1" />
   },
   {
     title: "Energy Solutions",
     href: "/services/energy-solutions",
-    description: "Energy-saving solutions to reduce operational costs",
+    description: "Expert efficiency consultancy to reduce fuel consumption and optimize performance in power plants as well",
+    image: "/images/service2.jpg",
+    icon: <Zap className="h-4 w-4 mr-1" />
   },
   {
-    title: "3D Services",
-    href: "/services/3d-services",
-    description: "Advanced 3D modeling and printing services",
+    title: "EDM Services",
+    href: "/services/edm",
+    description: "High-precision Electrical Discharge Machining for intricate shapes and fine details in hard materials as well",
+    image: "/Web Pics1/Services/8109b8ed-05bd-4fc3-8296-585e7ef04ab9.jpg",
+    icon: <Sparkles className="h-4 w-4 mr-1" />
   },
   {
-    title: "Maintenance",
-    href: "/services/maintenance",
-    description: "Preventive and corrective maintenance services",
+    title: "Fire Fighting Pumps",
+    href: "/services/fire-fighting-pumps",
+    description: "Supply, installation and maintenance of industrial fire fighting pump systems as well",
+    image: "/images/service3.jpg",
+    icon: <Droplet className="h-4 w-4 mr-1" />
   },
   {
-    title: "Consulting",
-    href: "/services/consulting",
-    description: "Expert consulting for industrial engineering challenges",
+    title: "Bend Removal",
+    href: "/services/bend-removal",
+    description: "Precision shaft and turbine rotor bend removal to restore critical components to original specifications as well",
+    image: "/Web Pics1/Equipment/BFP-Shaft-cylindrical grinding.jpg",
+    icon: <RotateCcw className="h-4 w-4 mr-1" />
   },
+  {
+    title: "Dynamic Balancing",
+    href: "/services/dynamic-balancing",
+    description: "Precision balancing services to improve performance, reliability, and safety of rotating equipment as well",
+    image: "/images/service2.jpg",
+    icon: <Scale className="h-4 w-4 mr-1" />
+  }
 ]
 
 export default function Navbar() {
@@ -122,7 +169,10 @@ export default function Navbar() {
                             href={service.href}
                             className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                           >
-                            <div className="text-sm font-medium leading-none">{service.title}</div>
+                            <div className="text-sm font-medium leading-none flex items-center">
+                              {service.icon}
+                              {service.title}
+                            </div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               {service.description}
                             </p>
@@ -153,7 +203,7 @@ export default function Navbar() {
           <div className="flex items-center space-x-4">
             <div className="hidden xl:flex items-center space-x-2 text-sm">
               <Phone className="h-4 w-4 text-primary" />
-              <span className="font-medium">+91 9876543210</span>
+              <span className="font-medium">+91 77229 44331</span>
             </div>
             <Button asChild>
               <Link href="/contact">Get a Quote</Link>
@@ -255,7 +305,7 @@ export default function Navbar() {
                   </Button>
                   <div className="flex items-center justify-center mt-6 space-x-2">
                     <Phone className="h-4 w-4 text-primary" />
-                    <span className="text-sm font-medium">+91 9876543210</span>
+                    <span className="text-sm font-medium">+91 77229 44331</span>
                   </div>
                 </div>
               </div>
