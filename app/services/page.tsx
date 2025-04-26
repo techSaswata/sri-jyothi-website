@@ -15,100 +15,164 @@ export const metadata = {
 
 const services = [
   {
-    id: "repair",
-    title: "Repair Services",
+    id: "engineering",
+    title: "Engineering Services",
     description:
-      "Expert repair services for all types of industrial machinery and equipment to minimize downtime and maximize productivity.",
-    image: "/images/service4.jpg",
+      "Reliable and professional engineering support to help clients reduce downtime, improve safety, and handle changes smoothly with 24+ years of experience.",
+    image: "/Web Pics1/Equipment/Vacuum pump Overhauling.jpg",
     features: [
-      "Emergency repair services",
-      "Preventive maintenance",
-      "Equipment troubleshooting",
-      "Performance optimization",
-      "Component replacement",
-      "Quality testing and validation",
+      "Better efficiency",
+      "Correct and clear information",
+      "Competitive pricing",
+      "Reliable backup support",
+      "Strong design quality",
+      "Less downtime",
     ],
-    link: "/services/repair",
+    link: "/services/engineering",
+  },
+  {
+    id: "reverse-engineering",
+    title: "Reverse Engineering",
+    description:
+      "Fast and reliable reverse engineering solutions to reproduce spare parts that are hard to find or no longer available.",
+    image: "/Web Pics1/Services/Reverse_Engineering.jpg",
+    features: [
+      "Quick reproduction of unavailable parts",
+      "Option to upgrade materials or improve designs",
+      "Accurate 3D scanning and CAD modeling",
+      "Short delivery times and reliable quality",
+      "High precision and proper tolerances",
+      "Support even without original drawings",
+    ],
+    link: "/services/reverse-engineering",
+  },
+  {
+    id: "overhauling",
+    title: "Overhauling Services",
+    description:
+      "Comprehensive erection, commissioning, maintenance, and overhauling services for the entire lifecycle of industrial equipment.",
+    image: "/Web Pics1/Services/Condenser tubes replacement/Condenser tubes replacement work.jpg",
+    features: [
+      "Improve equipment performance and reliability",
+      "Extend equipment lifespan",
+      "Ensure safe and efficient machinery operation",
+      "Specialized services for power, cement, paper industries",
+      "Expert equipment inspection and assessment",
+      "Post-service testing and validation",
+    ],
+    link: "/services/overhauling",
+  },
+  {
+    id: "3d-scanning",
+    title: "3D Scanning",
+    description:
+      "Precise digital models and technical drawings of existing mechanical components for spare parts development and reproduction.",
+    image: "/Web Pics1/Services/3D scan/3D scan-1.jpg",
+    features: [
+      "3D scanning of existing parts, even if damaged",
+      "Creation of detailed 3D models and drawings",
+      "Reverse engineering for obsolete components",
+      "Support for machining and fabrication processes",
+      "Ensure dimensional accuracy and fit",
+      "Eliminate dependency on unavailable OEM drawings",
+    ],
+    link: "/services/3d-scanning",
   },
   {
     id: "spare-parts",
     title: "Spare Parts",
     description:
-      "Quality spare parts for industrial equipment, ensuring optimal performance and longevity of your machinery.",
-    image: "/images/spares1.jpg",
+      "High-quality mechanical spares designed, manufactured, and delivered to keep your equipment running smoothly and reliably.",
+    image: "/Web Pics1/Equipment/Turbine seals.jpg",
     features: [
-      "OEM and aftermarket parts",
-      "Custom part manufacturing",
-      "Inventory management",
-      "Parts compatibility analysis",
-      "Quality assurance testing",
-      "Expedited delivery options",
+      "Turbine blades and fan blades",
+      "Thrust bearings and journal bearings",
+      "White metal bearings (rebabbitting)",
+      "Labyrinth seals and glands",
+      "Hydraulic cylinders and equipment casings",
+      "Pump and fan impellers",
     ],
     link: "/services/spare-parts",
+  },
+  {
+    id: "repair",
+    title: "Repair Services",
+    description:
+      "Comprehensive repair, reconditioning, and refurbishment services for power and process industry equipment to restore functionality.",
+    image: "/Web Pics1/Services/Condenser vacuum Pump/vacuum pump balancing.jpg",
+    features: [
+      "Diagnostics and precision repairs",
+      "Component upgrades and retrofits",
+      "Minimize downtime and operational losses",
+      "Optimize reliability and performance",
+      "Compliance with industry standards",
+      "Extended equipment service life",
+    ],
+    link: "/services/repair",
   },
   {
     id: "energy-solutions",
     title: "Energy Solutions",
     description:
-      "Innovative energy-saving solutions to reduce operational costs and environmental impact of your industrial processes.",
-    image: "/images/service2.jpg",
+      "Expert energy efficiency consultancy tailored for power plants to reduce fuel consumption and optimize overall performance.",
+    image: "/Web Pics1/Equipment/vacuum pump and booster pump casing.jpg",
     features: [
-      "Energy audits and assessments",
-      "Efficiency improvement recommendations",
-      "Renewable energy integration",
-      "Power quality optimization",
-      "Heat recovery systems",
-      "Energy management systems",
+      "Targeted component upgrades",
+      "Complete plant modernization",
+      "Detailed site audits and data analysis",
+      "System evaluations and improvement identification",
+      "Output boosting and emission lowering",
+      "Cost-effective and sustainable energy use",
     ],
     link: "/services/energy-solutions",
   },
   {
-    id: "3d-services",
-    title: "3D Services",
+    id: "edm",
+    title: "EDM Services",
     description:
-      "Advanced 3D modeling, printing, and scanning services for prototyping, reverse engineering, and product development.",
-    image: "/images/3d-scan.jpg",
+      "High-precision Electrical Discharge Machining for producing intricate shapes and fine details in hard materials with exceptional accuracy.",
+    image: "/Web Pics1/Equipment/ERT devices.jpg",
     features: [
-      "3D modeling and design",
-      "Rapid prototyping",
-      "Reverse engineering",
-      "3D scanning of components",
-      "Product visualization",
-      "Manufacturing support",
+      "Spark Erosion and Spark Machining",
+      "Wire Erosion and Die Sinking",
+      "Tolerances as tight as 0.1 microns",
+      "Exceptional precision and surface finish",
+      "Complex component manufacturing",
+      "Hard-to-machine material processing",
     ],
-    link: "/services/3d-services",
+    link: "/services/edm",
   },
   {
-    id: "maintenance",
-    title: "Maintenance",
+    id: "bend-removal",
+    title: "Bend Removal",
     description:
-      "Comprehensive preventive and corrective maintenance services to ensure smooth operation of your industrial equipment.",
-    image: "/images/service1.jpg",
+      "Precision shaft and turbine rotor bend removal, restoring critical components to their original specifications for optimal performance.",
+    image: "/Web Pics1/Equipment/BFP-Shaft-cylindrical grinding.jpg",
     features: [
-      "Scheduled maintenance programs",
-      "Condition monitoring",
-      "Predictive maintenance",
-      "Equipment lifecycle management",
-      "Maintenance staff training",
-      "Documentation and reporting",
+      "Advanced diagnostics and straightening",
+      "Cost savings over new component manufacturing",
+      "Extended equipment life",
+      "Reduced unplanned downtime",
+      "Improved operational reliability",
+      "Safe, smooth, and dependable machinery",
     ],
-    link: "/services/maintenance",
+    link: "/services/bend-removal",
   },
   {
-    id: "consulting",
-    title: "Consulting",
+    id: "dynamic-balancing",
+    title: "Dynamic Balancing",
     description:
-      "Expert consulting services for industrial engineering challenges, process optimization, and efficiency improvement.",
-    image: "/images/service3.jpg",
+      "Precision balancing services to improve the performance, reliability, and safety of rotating equipment across various industries.",
+    image: "/Web Pics1/Services/Condenser vacuum Pump/vacuum pump.jpg",
     features: [
-      "Process optimization",
-      "Facility planning and layout",
-      "Equipment selection and procurement",
-      "Safety and compliance audits",
-      "Project management",
-      "Training and development",
+      "Advanced diagnostic tools",
+      "Specialized balancing techniques",
+      "Reduced vibration for smoother operation",
+      "Minimized wear on critical components",
+      "Lower mechanical stress and maintenance costs",
+      "Increased operational efficiency",
     ],
-    link: "/services/consulting",
+    link: "/services/dynamic-balancing",
   },
 ]
 
@@ -244,13 +308,13 @@ export default function ServicesPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Card className="border shadow-sm hover:shadow-md transition-all duration-300 text-center">
               <CardContent className="p-6">
-                <div className="h-16 w-16 mx-auto mb-4">
+                <div className="h-16 w-16 mx-auto mb-4 relative">
                   <Image
-                    src="/placeholder-logo.png"
+                    src="/Web Pics1/Equipment/Impellers.jpg"
                     alt="Manufacturing"
                     width={64}
                     height={64}
-                    className="h-full w-full"
+                    className="h-full w-full object-cover rounded-full"
                   />
                 </div>
                 <h3 className="text-xl font-bold mb-3">Manufacturing</h3>
@@ -263,13 +327,13 @@ export default function ServicesPage() {
 
             <Card className="border shadow-sm hover:shadow-md transition-all duration-300 text-center">
               <CardContent className="p-6">
-                <div className="h-16 w-16 mx-auto mb-4">
+                <div className="h-16 w-16 mx-auto mb-4 relative">
                   <Image
-                    src="/placeholder-logo.png"
+                    src="/Web Pics1/Services/BFP/BFP-Overhauling services.jpg"
                     alt="Power Generation"
                     width={64}
                     height={64}
-                    className="h-full w-full"
+                    className="h-full w-full object-cover rounded-full"
                   />
                 </div>
                 <h3 className="text-xl font-bold mb-3">Power Generation</h3>
@@ -282,13 +346,13 @@ export default function ServicesPage() {
 
             <Card className="border shadow-sm hover:shadow-md transition-all duration-300 text-center">
               <CardContent className="p-6">
-                <div className="h-16 w-16 mx-auto mb-4">
+                <div className="h-16 w-16 mx-auto mb-4 relative">
                   <Image
-                    src="/placeholder-logo.png"
+                    src="/Web Pics1/Equipment/Journal Bearings.jpg"
                     alt="Oil & Gas"
                     width={64}
                     height={64}
-                    className="h-full w-full"
+                    className="h-full w-full object-cover rounded-full"
                   />
                 </div>
                 <h3 className="text-xl font-bold mb-3">Oil & Gas</h3>
@@ -301,13 +365,13 @@ export default function ServicesPage() {
 
             <Card className="border shadow-sm hover:shadow-md transition-all duration-300 text-center">
               <CardContent className="p-6">
-                <div className="h-16 w-16 mx-auto mb-4">
+                <div className="h-16 w-16 mx-auto mb-4 relative">
                   <Image
-                    src="/placeholder-logo.png"
+                    src="/Web Pics1/Equipment/Tube sheet.jpg"
                     alt="Infrastructure"
                     width={64}
                     height={64}
-                    className="h-full w-full"
+                    className="h-full w-full object-cover rounded-full"
                   />
                 </div>
                 <h3 className="text-xl font-bold mb-3">Infrastructure</h3>

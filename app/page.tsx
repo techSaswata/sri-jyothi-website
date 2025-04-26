@@ -7,16 +7,19 @@ import TestimonialsSection from "@/components/sections/testimonials-section"
 import ContactSection from "@/components/sections/contact-section"
 import CtaSection from "@/components/sections/cta-section"
 import PartnersSection from "@/components/sections/partners-section"
+import CarouselSection from "@/components/sections/carousel-section"
+import GifSection from "@/components/sections/gif-section"
 
 export default function Home() {
   return (
     <>
+      <CarouselSection />
       <HeroSection />
-      <PartnersSection />
+      <AboutSection />
+      <GifSection />
       <ServicesSection />
       <StatsSection />
       <SolutionsSection />
-      <AboutSection />
       <TestimonialsSection />
       <CtaSection />
       <ContactSection />

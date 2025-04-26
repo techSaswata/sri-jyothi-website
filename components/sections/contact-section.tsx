@@ -62,12 +62,12 @@ export default function ContactSection() {
                   <div>
                     <h3 className="font-medium mb-1">Email Us</h3>
                     <p className="text-sm text-muted-foreground mb-1">For general inquiries:</p>
-                    <a href="mailto:info@srijyothiengineeringservices.com" className="text-primary hover:underline">
-                      info@srijyothiengineeringservices.com
+                    <a href="mailto:sjes331@gmail.com" className="text-primary hover:underline">
+                      sjes331@gmail.com
                     </a>
-                    <p className="text-sm text-muted-foreground mt-2 mb-1">For support:</p>
-                    <a href="mailto:support@srijyothiengineeringservices.com" className="text-primary hover:underline">
-                      support@srijyothiengineeringservices.com
+                    <p className="text-sm text-muted-foreground mt-2 mb-1">For technical communications:</p>
+                    <a href="mailto:techcom@srijyothi.com" className="text-primary hover:underline">
+                      techcom@srijyothi.com
                     </a>
                   </div>
                 </CardContent>
@@ -81,12 +81,12 @@ export default function ContactSection() {
                   <div>
                     <h3 className="font-medium mb-1">Call Us</h3>
                     <p className="text-sm text-muted-foreground mb-1">Main Office:</p>
-                    <a href="tel:+919876543210" className="text-primary hover:underline">
-                      +91 9876543210
+                    <a href="tel:+917722944331" className="text-primary hover:underline">
+                      +91 77229 44331
                     </a>
-                    <p className="text-sm text-muted-foreground mt-2 mb-1">Customer Support:</p>
-                    <a href="tel:+919876543211" className="text-primary hover:underline">
-                      +91 9876543211
+                    <p className="text-sm text-muted-foreground mt-2 mb-1">Alternative:</p>
+                    <a href="tel:+919630311331" className="text-primary hover:underline">
+                      +91 96303 11331
                     </a>
                   </div>
                 </CardContent>
@@ -99,16 +99,22 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <h3 className="font-medium mb-1">Visit Us</h3>
-                    <p className="text-sm text-muted-foreground mb-2">Our Office:</p>
-                    <address className="not-italic text-sm">
-                      123 Engineering Way,
-                      <br />
-                      Industrial Area,
-                      <br />
-                      Hyderabad, Telangana,
-                      <br />
-                      India - 500001
-                    </address>
+                    <div className="text-sm mb-4">
+                      <p className="text-sm text-muted-foreground font-medium mb-1">Vijaywada Office:</p>
+                      <address className="not-italic text-sm">
+                        D.No : 2-306/A, Main Road,<br />
+                        Polavaram (Po), Chatrai (Md),<br />
+                        Eluru (Dt)-521214, AP
+                      </address>
+                    </div>
+                    <div className="text-sm">
+                      <p className="text-sm text-muted-foreground font-medium mb-1">Hyderabad Office:</p>
+                      <address className="not-italic text-sm">
+                        Plot No. 61/D, Phase-1,<br />
+                        I.D.A., Jeedimetla,<br />
+                        Hyderabad – 500055
+                      </address>
+                    </div>
                   </div>
                 </CardContent>
               </Card>

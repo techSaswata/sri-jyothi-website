@@ -116,8 +116,32 @@ export default function Footer() {
               <h3 className="text-lg font-bold mb-6">Our Services</h3>
               <ul className="space-y-4">
                 <li>
-                  <Link href="/services/repair" className="text-muted-foreground hover:text-primary transition-colors">
-                    Repair Services
+                  <Link href="/services/engineering" className="text-muted-foreground hover:text-primary transition-colors">
+                    Engineering Services
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/services/reverse-engineering"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    Reverse Engineering
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/services/overhauling"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    Overhauling Services
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/services/3d-scanning"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    3D Scanning
                   </Link>
                 </li>
                 <li>
@@ -130,34 +154,10 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/services/energy-solutions"
+                    href="/services/repair"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    Energy Solutions
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/services/3d-services"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    3D Services
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/services/maintenance"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    Maintenance
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/services/consulting"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    Consulting
+                    Repair Services
                   </Link>
                 </li>
               </ul>
@@ -169,17 +169,20 @@ export default function Footer() {
               <ul className="space-y-4">
                 <li className="flex items-start">
                   <MapPin className="h-5 w-5 text-primary mr-3 mt-0.5" />
-                  <span className="text-muted-foreground">
-                    123 Engineering Way, Industrial Area, Hyderabad, Telangana, India - 500001
-                  </span>
+                  <div className="text-muted-foreground">
+                    <p className="font-medium mb-1">Vijaywada:</p>
+                    <p>D.No : 2-306/A, Main Road, Polavaram (Po), Chatrai (Md), Eluru (Dt)-521214. AP</p>
+                    <p className="font-medium mt-4 mb-1">Hyderabad:</p>
+                    <p>Plot No. 61/D, Phase-1, I.D.A., Jeedimetla, Hyderabad – 500055</p>
+                  </div>
                 </li>
                 <li className="flex items-center">
                   <Phone className="h-5 w-5 text-primary mr-3" />
-                  <span className="text-muted-foreground">+91 9876543210</span>
+                  <span className="text-muted-foreground">+91 77229 44331, +91 96303 11331</span>
                 </li>
                 <li className="flex items-center">
                   <Mail className="h-5 w-5 text-primary mr-3" />
-                  <span className="text-muted-foreground">info@srijyothiengineeringservices.com</span>
+                  <span className="text-muted-foreground">sjes331@gmail.com, techcom@srijyothi.com</span>
                 </li>
               </ul>
             </div>

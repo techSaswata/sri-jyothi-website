@@ -36,7 +36,7 @@ export default function AboutSection() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.15,
       },
     },
   }
@@ -47,119 +47,224 @@ export default function AboutSection() {
       opacity: 1,
       y: 0,
       transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  }
+
+  const cardVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
         duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  }
+
+  const checkmarkVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
       },
     },
   }
 
   return (
-    <section className="section-padding bg-background" id="about">
-      <div className="container">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <motion.div ref={ref} variants={containerVariants} initial="hidden" animate={isInView ? "visible" : "hidden"}>
-            <motion.div variants={itemVariants}>
-              <h2 className="section-title mb-6">About Sri Jyothi Engineering Services</h2>
-              <p className="text-lg text-muted-foreground mb-6">
-                Founded in 2005, Sri Jyothi Engineering Services has established itself as a leading provider of
-                comprehensive engineering solutions for various industries. With a team of experienced engineers and
-                technicians, we deliver high-quality services tailored to meet the specific needs of our clients.
+    <section className="section-padding relative overflow-hidden bg-gradient-to-br from-background via-blue-50/10 to-background dark:from-background dark:via-blue-950/10 dark:to-background" id="about">
+      {/* Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 0.05, scale: 1 }}
+          transition={{ duration: 2 }}
+          className="absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-gradient-to-br from-primary to-blue-500 blur-3xl"
+        />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 0.05, scale: 1 }}
+          transition={{ duration: 2, delay: 0.3 }}
+          className="absolute -left-40 bottom-0 h-[500px] w-[500px] rounded-full bg-gradient-to-tr from-primary to-blue-500 blur-3xl"
+        />
+      </div>
+
+      <div className="container relative">
+        {/* Top Section */}
+        <div className="grid lg:grid-cols-2 gap-16 xl:gap-20 items-start mb-16">
+          {/* Left Column - About & Mission */}
+          <motion.div
+            ref={ref}
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            className="max-w-xl lg:max-w-none mx-auto lg:mx-0"
+          >
+            <motion.div variants={itemVariants} className="mb-10">
+              <div className="inline-block rounded-full bg-gradient-to-r from-primary/10 to-blue-500/10 px-4 py-1.5 mb-4 border border-primary/10 backdrop-blur-sm">
+                <span className="text-sm font-medium bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
+                  Discover Our Story
+                </span>
+              </div>
+              <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-primary via-blue-600 to-primary bg-clip-text text-transparent">
+                About Us
+              </h2>
+              <p className="text-lg text-muted-foreground">
+              SJES is a leading India-based engineering service and manufacturing company specializing in high-capacity production environments across various industries, with particular expertise in the Energy sector.
+              With an impressive and growing client list, SJES has built a reputation for exceptional customer service, technical expertise, reliability, and quality engineering outcomes.
+              Our vision is to be the most trusted specialist services group in the delivery of Erection, Commissioning, Maintenance, and Manufacture & Supply of spares.
               </p>
             </motion.div>
 
-            <motion.div variants={itemVariants}>
-              <h3 className="text-xl font-bold mb-4">Our Mission</h3>
-              <p className="text-muted-foreground mb-6">
+            <motion.div variants={itemVariants} className="bg-primary/5 rounded-2xl p-6 mb-10 backdrop-blur-sm">
+              <h3 className="text-xl font-bold mb-4 text-primary">Our Mission</h3>
+              <p className="text-muted-foreground">
                 To provide innovative and sustainable engineering solutions that enhance operational efficiency, reduce
                 costs, and contribute to the success of our clients' businesses.
               </p>
             </motion.div>
+          </motion.div>
 
+          {/* Right Column - Image */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="relative w-full"
+          >
+            <motion.div
+              initial={{ scale: 0.95 }}
+              animate={isInView ? { scale: 1 } : {}}
+              transition={{ duration: 0.5 }}
+              className="relative z-10 w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-xl border border-primary/10"
+            >
+              <Image
+                src="/Web Pics1/About Us/About us Header-1.jpg"
+                alt="About Sri Jyothi Engineering Services"
+                fill
+                className="object-cover object-center hover:scale-105 transition-transform duration-700"
+                priority
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent mix-blend-overlay" />
+            </motion.div>
+            
+            {/* Enhanced decorative elements */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 1, delay: 0.4 }}
+              className="absolute -z-10 -right-6 -bottom-6 w-64 h-64 bg-gradient-to-br from-primary/10 to-blue-500/10 rounded-full blur-xl"
+            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 1, delay: 0.6 }}
+              className="absolute -z-10 -left-6 -top-6 w-64 h-64 bg-gradient-to-tr from-primary/10 to-blue-500/10 rounded-full blur-xl"
+            />
+          </motion.div>
+        </div>
+        
+        {/* Middle Section - Core Values and Why Choose Us side by side */}
+        <div className="grid lg:grid-cols-2 gap-16 xl:gap-20 items-start mb-16">
+          {/* Left Column - Core Values */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            className="max-w-xl lg:max-w-none mx-auto lg:mx-0"
+          >
             <motion.div variants={itemVariants}>
-              <h3 className="text-xl font-bold mb-4">Our Core Values</h3>
-              <div className="grid sm:grid-cols-3 gap-6 mb-8">
+              <h3 className="text-2xl md:text-3xl font-bold mb-6 bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
+                Our Core Values
+              </h3>
+              <div className="grid gap-4">
                 {values.map((value, index) => (
-                  <div key={index} className="bg-background p-4 rounded-lg border">
-                    <div className="p-2 bg-primary/10 rounded-full w-12 h-12 flex items-center justify-center text-primary mb-4">
-                      {value.icon}
+                  <motion.div
+                    key={index}
+                    variants={cardVariants}
+                    className="group bg-gradient-to-br from-background to-blue-50/30 dark:from-gray-900 dark:to-gray-900/50 p-4 rounded-xl border border-primary/10 hover:border-primary/30 transition-colors duration-300 hover:shadow-lg"
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="p-2 bg-gradient-to-br from-primary/10 to-blue-500/10 rounded-xl w-12 h-12 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
+                        {value.icon}
+                      </div>
+                      <div>
+                        <h4 className="text-lg font-bold text-primary">{value.title}</h4>
+                        <p className="text-base text-muted-foreground group-hover:text-primary/80 transition-colors duration-300">
+                          {value.description}
+                        </p>
+                      </div>
                     </div>
-                    <h4 className="font-bold mb-2">{value.title}</h4>
-                    <p className="text-sm text-muted-foreground">{value.description}</p>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>
-
-            <motion.div variants={itemVariants}>
-              <h3 className="text-xl font-bold mb-4">Why Choose Us</h3>
-              <div className="space-y-3 mb-8">
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                  <span>25+ years of industry experience</span>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                  <span>Team of certified engineers and technicians</span>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                  <span>State-of-the-art equipment and technology</span>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                  <span>Customized solutions for specific industry needs</span>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                  <span>Commitment to quality and customer satisfaction</span>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div variants={itemVariants}>
-              <Button asChild>
-                <Link href="/about">
-                  Learn More About Us
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-            </motion.div>
           </motion.div>
 
-          <div className="relative">
-            <div className="relative z-10 rounded-2xl overflow-hidden shadow-xl border">
-              <Image
-                src="/images/equipment.avif"
-                alt="About Sri Jyothi Engineering Services"
-                width={600}
-                height={800}
-                className="w-full h-auto object-cover"
-              />
-            </div>
-
-            {/* Decorative elements */}
-            <div className="absolute -z-10 -right-6 -bottom-6 w-64 h-64 bg-primary/5 rounded-full" />
-            <div className="absolute -z-10 -left-6 -top-6 w-64 h-64 bg-primary/5 rounded-full" />
-
-            {/* Experience badge */}
-            <div className="absolute top-8 -left-8 bg-primary text-white rounded-full p-6 shadow-lg">
-              <div className="text-center">
-                <div className="text-3xl font-bold">25+</div>
-                <div className="text-xs">Years Experience</div>
+          {/* Right Column - Why Choose Us */}
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+            className="max-w-xl lg:max-w-none mx-auto lg:mx-0"
+          >
+            <motion.div variants={itemVariants}>
+              <h3 className="text-2xl md:text-3xl font-bold mb-6 bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
+                Why Choose Us
+              </h3>
+              <div className="grid gap-4">
+                {[
+                  "25+ years of industry experience",
+                  "Team of certified engineers and technicians",
+                  "State-of-the-art equipment and technology",
+                  "Customized solutions for specific industry needs",
+                  "Commitment to quality and customer satisfaction",
+                  "Exceptional after-sales support",
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    variants={checkmarkVariants}
+                    className="flex items-start space-x-3 group bg-gradient-to-br from-background to-blue-50/30 dark:from-gray-900 dark:to-gray-900/50 p-4 rounded-xl border border-primary/10 hover:border-primary/30 transition-colors duration-300 hover:shadow-lg"
+                  >
+                    <div className="bg-primary/10 rounded-full p-1.5 group-hover:bg-primary/20 transition-colors duration-300">
+                      <CheckCircle className="h-6 w-6 text-primary" />
+                    </div>
+                    <span className="text-base text-muted-foreground group-hover:text-primary transition-colors duration-300 pt-0.5">
+                      {item}
+                    </span>
+                  </motion.div>
+                ))}
               </div>
-            </div>
-
-            {/* Certification badge */}
-            <div className="absolute -bottom-8 -right-8 bg-background rounded-xl shadow-lg p-4 border">
-              <div className="flex items-center space-x-3">
-                <Award className="h-10 w-10 text-primary" />
-                <div>
-                  <h4 className="font-medium">ISO Certified</h4>
-                  <p className="text-xs text-muted-foreground">Quality Management</p>
-                </div>
-              </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
+
+        {/* Bottom Section - CTA */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          className="text-center"
+        >
+          <motion.div variants={itemVariants}>
+            <Button
+              asChild
+              className="bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-600/90 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5 px-8"
+            >
+              <Link href="/about">
+                Learn More About Us
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   )
