@@ -70,6 +70,21 @@ export default function AboutPage() {
             </p>
             <div className="h-1 w-20 bg-primary mx-auto mt-6"></div>
           </div>
+          
+          {/* Vision Image - Horizontal Container */}
+          <div className="w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-lg border border-primary/10 mb-12 p-2 bg-white">
+            <div className="relative w-full" style={{ height: "300px" }}>
+              <Image
+                src="/images/vision.png"
+                alt="Sri Jyothi Engineering Vision"
+                fill
+                className="object-contain"
+                sizes="(max-width: 768px) 100vw, 800px"
+                priority
+                quality={100}
+              />
+            </div>
+          </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Card className="border shadow-sm hover:shadow-md transition-all duration-300">
@@ -77,7 +92,7 @@ export default function AboutPage() {
                 <div className="p-3 rounded-full bg-primary/10 text-primary mb-4">
                   <Clock className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-bold mb-2">24+ Years</h3>
+                <h3 className="text-xl font-bold mb-2">22+ Years</h3>
                 <p className="text-muted-foreground">
                   More than two decades of experience in industrial engineering
                 </p>
@@ -356,7 +371,7 @@ export default function AboutPage() {
       </section>
 
       {/* Standard CTA Section */}
-      <CtaSection />
+      {/* <CtaSection /> */}
     </>
   )
 }

@@ -34,7 +34,7 @@ export default function Footer() {
             <div className="space-y-6">
               <Link href="/" className="flex items-center space-x-2">
                 <Image
-                  src="/images/logo.png"
+                  src="/images/logo copy.png"
                   alt="Sri Jyothi Engineering Services"
                   width={48}
                   height={48}

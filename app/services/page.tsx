@@ -6,6 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { CheckCircle, ArrowRight } from "lucide-react"
 import CtaSection from "@/components/sections/cta-section"
 import TestimonialsSection from "@/components/sections/testimonials-section"
+import GifSection from "@/components/sections/gif-section"
 
 export const metadata = {
   title: "Services | Sri Jyothi Engineering Services",
@@ -179,8 +180,9 @@ const services = [
 export default function ServicesPage() {
   return (
     <>
+    
       {/* Hero Section */}
-      <section className="pt-20 pb-16 md:pt-24 md:pb-20 bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-950">
+      <section className="pt-20 pb-16 md:pt-7 md:pb-7 bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-950">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
@@ -193,6 +195,8 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
+      <GifSection />
 
       {/* Services Overview Section */}
       <section className="py-16 bg-background">
