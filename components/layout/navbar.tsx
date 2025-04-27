@@ -17,7 +17,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
-import { Menu, ChevronDown, Phone, Wrench, RefreshCw, Settings, ScanLine, Cog, Zap, Sparkles, RotateCcw, Scale, PenTool, Droplet } from "lucide-react"
+import { Menu, ChevronDown, Phone, Wrench, RefreshCw, Settings, ScanLine, Cog, Zap, Sparkles, RotateCcw, Scale, PenTool, Droplet, Mail } from "lucide-react"
 
 export const services = [
   {
@@ -99,6 +99,24 @@ export const services = [
   }
 ]
 
+// Custom navigation link style with underline animation
+const navLinkStyle = (isActive: boolean) => {
+  return cn(
+    "relative px-3 py-1.5 transition-colors duration-200",
+    "after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 after:ease-in-out hover:after:origin-bottom-left hover:after:scale-x-100",
+    isActive && "text-primary after:origin-bottom-left after:scale-x-100"
+  )
+}
+
+// Mobile navigation link style
+const mobileNavLinkStyle = (isActive: boolean) => {
+  return cn(
+    "relative inline-block transition-colors hover:text-primary",
+    "after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 after:ease-in-out hover:after:origin-bottom-left hover:after:scale-x-100",
+    isActive && "text-primary after:origin-bottom-left after:scale-x-100"
+  )
+}
+
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const pathname = usePathname()
@@ -120,46 +138,50 @@ export default function Navbar() {
     <header
       className={cn(
         "sticky top-0 z-50 w-full transition-all duration-300",
-        isScrolled ? "glass-effect border-b shadow-sm py-3" : "bg-transparent py-5",
+        isScrolled ? "glass-effect border-b shadow-sm py-2" : "bg-transparent py-3",
       )}
     >
-      <div className="container flex items-center justify-between">
-        <Link href="/" className="flex items-center space-x-2">
+      <div className="container max-w-[95%] mx-auto flex items-center justify-between px-0 sm:px-0 lg:px-0">
+        <Link href="/" className="flex items-center space-x-2 ml-0 sm:ml-1">
           <Image
-            src="/images/logo.png"
+            src="/images/logo copy.png"
             alt="Sri Jyothi Engineering Services"
-            width={48}
-            height={48}
-            className="h-12 w-auto"
+            width={40}
+            height={40}
+            className="h-10 w-auto"
           />
           <div className="hidden sm:block">
-            <h1 className="text-lg font-bold leading-tight">
+            <h1 className="text-base font-bold leading-tight">
               Sri Jyothi
-              <span className="block text-sm font-medium text-muted-foreground">Engineering Services</span>
+              <span className="block text-xs font-medium text-muted-foreground">Engineering Services</span>
             </h1>
           </div>
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center space-x-8">
+        <div className="hidden lg:flex items-center space-x-12 mr-0">
           <NavigationMenu>
-            <NavigationMenuList>
+            <NavigationMenuList className="space-x-1">
               <NavigationMenuItem>
                 <Link href="/" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()} active={pathname === "/"}>
+                  <NavigationMenuLink className={navLinkStyle(pathname === "/")} active={pathname === "/"}>
                     Home
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/about" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()} active={pathname === "/about"}>
-                    About
+                  <NavigationMenuLink className={navLinkStyle(pathname === "/about")} active={pathname === "/about"}>
+                    About Us
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Services</NavigationMenuTrigger>
+                <Link href="/services" legacyBehavior passHref>
+                  <NavigationMenuTrigger className={pathname.startsWith("/services") ? "text-primary" : ""}>
+                    Services
+                  </NavigationMenuTrigger>
+                </Link>
                 <NavigationMenuContent>
                   <ul className="grid w-[600px] gap-3 p-4 md:grid-cols-2">
                     {services.map((service) => (
@@ -184,16 +206,16 @@ export default function Navbar() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/projects" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()} active={pathname === "/projects"}>
-                    Projects
+                <Link href="/equipment" legacyBehavior passHref>
+                  <NavigationMenuLink className={navLinkStyle(pathname === "/equipment")} active={pathname === "/equipment"}>
+                    Equipment
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/contact" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()} active={pathname === "/contact"}>
-                    Contact
+                  <NavigationMenuLink className={navLinkStyle(pathname === "/contact")} active={pathname === "/contact"}>
+                    Contact Us
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
@@ -201,11 +223,17 @@ export default function Navbar() {
           </NavigationMenu>
 
           <div className="flex items-center space-x-4">
-            <div className="hidden xl:flex items-center space-x-2 text-sm">
-              <Phone className="h-4 w-4 text-primary" />
-              <span className="font-medium">+91 77229 44331</span>
+            <div>
+              <div className="hidden xl:block text-sm">
+                <Phone className="h-4 w-4 text-primary mb-1 inline-block" />
+                <span className="font-medium ml-2">+91 77229 44331</span>
+              </div>
+              <div className="hidden xl:block text-sm mt-1">
+                <Mail className="h-4 w-4 text-primary mb-1 inline-block" />
+                <span className="font-medium ml-2">sjes331@gmail.com</span>
+              </div>
             </div>
-            <Button asChild>
+            <Button size="sm" asChild>
               <Link href="/contact">Get a Quote</Link>
             </Button>
             <ModeToggle />
@@ -213,7 +241,7 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Navigation */}
-        <div className="flex items-center space-x-4 lg:hidden">
+        <div className="flex items-center space-x-4 lg:hidden mr-0">
           <ModeToggle />
           <Sheet>
             <SheetTrigger asChild>
@@ -244,6 +272,7 @@ export default function Navbar() {
                         className={cn(
                           "flex items-center text-lg font-medium transition-colors hover:text-primary",
                           pathname === "/" ? "text-primary" : "text-foreground",
+                          mobileNavLinkStyle(pathname === "/")
                         )}
                       >
                         Home
@@ -255,20 +284,37 @@ export default function Navbar() {
                         className={cn(
                           "flex items-center text-lg font-medium transition-colors hover:text-primary",
                           pathname === "/about" ? "text-primary" : "text-foreground",
+                          mobileNavLinkStyle(pathname === "/about")
                         )}
                       >
-                        About
+                        About Us
                       </Link>
                     </li>
                     <li className="space-y-3">
                       <div className="flex items-center justify-between">
-                        <span className="text-lg font-medium">Services</span>
+                        <Link 
+                          href="/services"
+                          className={cn(
+                            "text-lg font-medium hover:text-primary",
+                            pathname.startsWith("/services") ? "text-primary" : "text-foreground",
+                            mobileNavLinkStyle(pathname.startsWith("/services"))
+                          )}
+                        >
+                          <span>Services</span>
+                        </Link>
                         <ChevronDown className="h-4 w-4" />
                       </div>
                       <ul className="pl-4 space-y-3">
                         {services.map((service) => (
                           <li key={service.title}>
-                            <Link href={service.href} className="text-base text-muted-foreground hover:text-primary">
+                            <Link 
+                              href={service.href} 
+                              className={cn(
+                                "text-base text-muted-foreground hover:text-primary relative",
+                                "after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 after:ease-in-out hover:after:origin-bottom-left hover:after:scale-x-100",
+                                pathname === service.href && "text-primary after:origin-bottom-left after:scale-x-100"
+                              )}
+                            >
                               {service.title}
                             </Link>
                           </li>
@@ -277,13 +323,14 @@ export default function Navbar() {
                     </li>
                     <li>
                       <Link
-                        href="/projects"
+                        href="/equipment"
                         className={cn(
                           "flex items-center text-lg font-medium transition-colors hover:text-primary",
-                          pathname === "/projects" ? "text-primary" : "text-foreground",
+                          pathname === "/equipment" ? "text-primary" : "text-foreground",
+                          mobileNavLinkStyle(pathname === "/equipment")
                         )}
                       >
-                        Projects
+                        Equipment
                       </Link>
                     </li>
                     <li>
@@ -292,9 +339,10 @@ export default function Navbar() {
                         className={cn(
                           "flex items-center text-lg font-medium transition-colors hover:text-primary",
                           pathname === "/contact" ? "text-primary" : "text-foreground",
+                          mobileNavLinkStyle(pathname === "/contact")
                         )}
                       >
-                        Contact
+                        Contact Us
                       </Link>
                     </li>
                   </ul>
@@ -306,6 +354,10 @@ export default function Navbar() {
                   <div className="flex items-center justify-center mt-6 space-x-2">
                     <Phone className="h-4 w-4 text-primary" />
                     <span className="text-sm font-medium">+91 77229 44331</span>
+                  </div>
+                  <div className="flex items-center justify-center mt-6 space-x-2">
+                    <Mail className="h-4 w-4 text-primary" />
+                    <span className="text-sm font-medium">sjes331@gmail.com</span>
                   </div>
                 </div>
               </div>

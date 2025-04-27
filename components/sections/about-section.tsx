@@ -25,6 +25,12 @@ const values = [
     description:
       "We continuously innovate and adopt the latest technologies to provide cutting-edge engineering solutions.",
   },
+  {
+    icon: <ArrowRight className="h-6 w-6" />,
+    title: "Reliability",
+    description:
+      "We are committed to delivering projects on time and to specification, ensuring reliability at every step.",
+  },
 ]
 
 export default function AboutSection() {
@@ -122,13 +128,13 @@ export default function AboutSection() {
               </p>
             </motion.div>
 
-            <motion.div variants={itemVariants} className="bg-primary/5 rounded-2xl p-6 mb-10 backdrop-blur-sm">
+            {/* <motion.div variants={itemVariants} className="bg-primary/5 rounded-2xl p-6 mb-10 backdrop-blur-sm">
               <h3 className="text-xl font-bold mb-4 text-primary">Our Mission</h3>
               <p className="text-muted-foreground">
                 To provide innovative and sustainable engineering solutions that enhance operational efficiency, reduce
                 costs, and contribute to the success of our clients' businesses.
               </p>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
 
           {/* Right Column - Image */}
@@ -178,9 +184,9 @@ export default function AboutSection() {
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            className="max-w-xl lg:max-w-none mx-auto lg:mx-0"
+            className="max-w-xl lg:max-w-none mx-auto lg:mx-0 h-full flex flex-col"
           >
-            <motion.div variants={itemVariants}>
+            <motion.div variants={itemVariants} className="flex-1">
               <h3 className="text-2xl md:text-3xl font-bold mb-6 bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
                 Our Core Values
               </h3>
@@ -189,15 +195,15 @@ export default function AboutSection() {
                   <motion.div
                     key={index}
                     variants={cardVariants}
-                    className="group bg-gradient-to-br from-background to-blue-50/30 dark:from-gray-900 dark:to-gray-900/50 p-4 rounded-xl border border-primary/10 hover:border-primary/30 transition-colors duration-300 hover:shadow-lg"
+                    className="group bg-gradient-to-br from-background to-blue-50/30 dark:from-gray-900 dark:to-gray-900/50 p-6 rounded-xl border border-primary/10 hover:border-primary/30 transition-colors duration-300 hover:shadow-lg"
                   >
                     <div className="flex items-center gap-4">
                       <div className="p-2 bg-gradient-to-br from-primary/10 to-blue-500/10 rounded-xl w-12 h-12 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
                         {value.icon}
                       </div>
-                      <div>
+                      <div className="flex-1">
                         <h4 className="text-lg font-bold text-primary">{value.title}</h4>
-                        <p className="text-base text-muted-foreground group-hover:text-primary/80 transition-colors duration-300">
+                        <p className="text-base text-muted-foreground group-hover:text-primary/80 transition-colors duration-300 leading-relaxed">
                           {value.description}
                         </p>
                       </div>
@@ -213,32 +219,33 @@ export default function AboutSection() {
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            className="max-w-xl lg:max-w-none mx-auto lg:mx-0"
+            className="max-w-xl lg:max-w-none mx-auto lg:mx-0 h-full flex flex-col"
           >
-            <motion.div variants={itemVariants}>
+            <motion.div variants={itemVariants} className="flex-1">
               <h3 className="text-2xl md:text-3xl font-bold mb-6 bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
                 Why Choose Us
               </h3>
               <div className="grid gap-4">
                 {[
-                  "25+ years of industry experience",
-                  "Team of certified engineers and technicians",
-                  "State-of-the-art equipment and technology",
+                  "22+ years of industry experience",
+                  "Faster Response to Clients on emergency jobs",
+                  "Support on Critical Situations",
                   "Customized solutions for specific industry needs",
-                  "Commitment to quality and customer satisfaction",
-                  "Exceptional after-sales support",
+                  "Customer Satisfaction is our top priority",
                 ].map((item, index) => (
                   <motion.div
                     key={index}
                     variants={checkmarkVariants}
-                    className="flex items-start space-x-3 group bg-gradient-to-br from-background to-blue-50/30 dark:from-gray-900 dark:to-gray-900/50 p-4 rounded-xl border border-primary/10 hover:border-primary/30 transition-colors duration-300 hover:shadow-lg"
+                    className="flex items-start space-x-3 group bg-gradient-to-br from-background to-blue-50/30 dark:from-gray-900 dark:to-gray-900/50 p-6 rounded-xl border border-primary/10 hover:border-primary/30 transition-colors duration-300 hover:shadow-lg"
                   >
-                    <div className="bg-primary/10 rounded-full p-1.5 group-hover:bg-primary/20 transition-colors duration-300">
+                    <div className="p-2 bg-gradient-to-br from-primary/10 to-blue-500/10 rounded-xl w-12 h-12 flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
                       <CheckCircle className="h-6 w-6 text-primary" />
                     </div>
-                    <span className="text-base text-muted-foreground group-hover:text-primary transition-colors duration-300 pt-0.5">
-                      {item}
-                    </span>
+                    <div className="flex-1 pt-1">
+                      <span className="text-base text-muted-foreground group-hover:text-primary/80 transition-colors duration-300 block leading-relaxed">
+                        {item}
+                      </span>
+                    </div>
                   </motion.div>
                 ))}
               </div>

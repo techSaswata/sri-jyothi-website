@@ -7,56 +7,12 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { ChevronRight } from "lucide-react"
 
-const stats = [
-  { value: 25, label: "Years Experience", suffix: "+" },
-  { value: 500, label: "Projects Completed", suffix: "+" },
-  { value: 98, label: "Client Satisfaction", suffix: "%" },
-]
-
 export default function HeroSection() {
   const [isVisible, setIsVisible] = useState(false)
-  const [counts, setCounts] = useState(stats.map(() => 0))
-  const countingRef = useRef(null)
 
   useEffect(() => {
     setIsVisible(true)
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          startCounting()
-        }
-      },
-      { threshold: 0.5 }
-    )
-
-    if (countingRef.current) {
-      observer.observe(countingRef.current)
-    }
-
-    return () => observer.disconnect()
   }, [])
-
-  const startCounting = () => {
-    stats.forEach((stat, index) => {
-      const duration = 2000
-      const steps = 60
-      const increment = stat.value / steps
-      let current = 0
-      const timer = setInterval(() => {
-        current += increment
-        if (current >= stat.value) {
-          current = stat.value
-          clearInterval(timer)
-        }
-        setCounts(prev => {
-          const newCounts = [...prev]
-          newCounts[index] = Math.floor(current)
-          return newCounts
-        })
-      }, duration / steps)
-    })
-  }
 
   const letterVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -141,7 +97,7 @@ export default function HeroSection() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.8 }}
-              className="mb-16"
+              className="mb-8"
             >
               <Button
                 size="lg"
@@ -154,36 +110,6 @@ export default function HeroSection() {
                 </Link>
               </Button>
             </motion.div>
-
-            {/* Animated Stats */}
-            <div ref={countingRef} className="grid grid-cols-3 gap-4 lg:gap-6">
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={isVisible ? { y: 0, opacity: 1 } : {}}
-                  transition={{ duration: 0.5, delay: 1 + index * 0.1 }}
-                  className="relative group"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-blue-500/5 rounded-2xl -z-10 transform group-hover:scale-105 transition-transform duration-300" />
-                  <div className="p-4 relative overflow-hidden">
-                    <motion.div
-                      initial={{ scale: 0.5, opacity: 0 }}
-                      animate={isVisible ? { scale: 1, opacity: 1 } : {}}
-                      transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
-                      className="absolute -right-6 -top-6 w-12 h-12 bg-primary/10 rounded-full blur-xl group-hover:bg-primary/20 transition-colors duration-300"
-                    />
-                    <p className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent mb-1">
-                      {counts[index]}
-                      {stat.suffix}
-                    </p>
-                    <p className="text-sm text-muted-foreground group-hover:text-primary transition-colors duration-300">
-                      {stat.label}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
           </motion.div>
 
           {/* Hero Image */}

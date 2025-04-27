@@ -8,7 +8,7 @@ import CtaSection from "@/components/sections/cta-section"
 
 export const metadata: Metadata = {
   title: "Equipment | Sri Jyothi Engineering Services",
-  description: "Specialized equipment and components for power and process industries, engineered for reliability, efficiency, and long service life.",
+  description: "Specialized Equipment & Components for Power and Process Industries - Turbines, Pumps, Bearings and more from Sri Jyothi Engineering Services.",
 }
 
 export default function EquipmentPage() {
@@ -17,346 +17,390 @@ export default function EquipmentPage() {
       {/* Hero Section */}
       <section className="pt-20 pb-16 md:pt-24 md:pb-20 bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-950">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto">
+          <div className="text-center max-w-3xl mx-auto mb-8">
+            <div className="inline-block rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary mb-6">
+              Industrial Excellence
+            </div>
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-              Specialized <span className="gradient-text">Equipment & Components</span>
+              Specialized <span className="gradient-text">Equipment</span> & Components
             </h1>
-            <p className="text-lg text-muted-foreground mb-8">
+            <p className="text-lg text-muted-foreground">
               At Sri Jyothi Engineering Services, we supply, maintain, and refurbish a wide range of high-performance industrial equipment. From turbines and pumps to blowers, bearings, and auxiliaries, our equipment and components are engineered for reliability, efficiency, and long service life.
             </p>
-            <Button size="lg" asChild>
-              <Link href="/contact">
-                Request Equipment Support
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
           </div>
         </div>
       </section>
 
       {/* Turbines Section */}
-      <section className="py-16 bg-background">
+      <section className="py-16 bg-background" id="turbines">
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-block rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary mb-4">
-                Power Generation
-              </div>
-              <h2 className="text-3xl font-bold mb-4">Turbines</h2>
-              <p className="text-muted-foreground mb-6">
+          <div className="flex flex-col md:flex-row items-start gap-12 mb-12">
+            <div className="md:w-1/2">
+              <h2 className="text-3xl font-bold mb-6">⚙️ Turbines</h2>
+              <p className="text-lg mb-6">
                 We supply OEM-grade steam turbine spares to ensure peak reliability and performance during operations and overhauls.
               </p>
-              <h3 className="text-xl font-bold mb-3">Key Spares Supplied:</h3>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Turbine blades (HP/IP/LP)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Gland & labyrinth seals</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Journal & thrust bearings</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span>GV shafts, nozzle rings</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Barring gear components</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                  <span>Special fasteners and couplings</span>
-                </li>
-              </ul>
-              <Button variant="outline" asChild>
-                <Link href="/contact" className="group">
-                  Inquire About Turbine Spares
-                  <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-                </Link>
-              </Button>
+              <div className="space-y-2 mb-8">
+                <h3 className="text-xl font-bold">Key Spares Supplied:</h3>
+                <ul className="list-disc list-inside space-y-1 ml-4 text-muted-foreground">
+                  <li>Turbine blades (HP/IP/LP)</li>
+                  <li>Gland & labyrinth seals</li>
+                  <li>Journal & thrust bearings</li>
+                  <li>GV shafts, nozzle rings</li>
+                  <li>Barring gear components</li>
+                  <li>Special fasteners and couplings</li>
+                </ul>
+              </div>
             </div>
-            <div className="relative rounded-xl overflow-hidden shadow-lg h-80">
-              <Image
-                src="/Web Pics1/Services/BFP/BFP-Overhauling services.jpg"
-                alt="Turbine Components"
-                fill
-                className="object-cover"
-              />
+            <div className="md:w-1/2 grid grid-cols-2 gap-4">
+              <div className="rounded-xl overflow-hidden shadow-md h-64 relative">
+                <Image 
+                  src="/Web Pics1/Equipment/Turbine Moving Blades.jpg" 
+                  alt="Turbine Blades" 
+                  fill 
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
+              </div>
+              <div className="rounded-xl overflow-hidden shadow-md h-64 relative">
+                <Image 
+                  src="/Web Pics1/Equipment/Turbine seals.jpg" 
+                  alt="Turbine Seals" 
+                  fill 
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
+              </div>
+              <div className="rounded-xl overflow-hidden shadow-md h-64 relative">
+                <Image 
+                  src="/Web Pics1/Equipment/GV shafts.jpg" 
+                  alt="GV Shafts" 
+                  fill 
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
+              </div>
+              <div className="rounded-xl overflow-hidden shadow-md h-64 relative">
+                <Image 
+                  src="/Web Pics1/Equipment/Turbine Special Bolts and cap nuts.jpg" 
+                  alt="Special Bolts" 
+                  fill 
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* BFP Section */}
-      <section className="py-16 bg-gradient-secondary">
+      <section className="py-16 bg-gradient-secondary" id="bfp">
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1 relative rounded-xl overflow-hidden shadow-lg h-80">
-              <Image
-                src="/Web Pics1/Services/BFP/Services-BFP1.jpg"
-                alt="Boiler Feed Pumps"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="order-1 lg:order-2">
-              <div className="inline-block rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary mb-4">
-                Critical Pump Systems
-              </div>
-              <h2 className="text-3xl font-bold mb-4">Boiler Feed Pumps (BFP)</h2>
-              <p className="text-muted-foreground mb-6">
+          <div className="flex flex-col md:flex-row-reverse items-start gap-12 mb-12">
+            <div className="md:w-1/2">
+              <h2 className="text-3xl font-bold mb-6">🚰 Boiler Feed Pumps (BFP)</h2>
+              <p className="text-lg mb-6">
                 Comprehensive spares and services for TDBFPs and MDBFPs, designed to improve pump performance and lifecycle.
               </p>
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <h3 className="text-xl font-bold mb-3">Spares Supplied:</h3>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span>Shafts, impellers, wear rings</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span>Balance drums, thrust collar nuts</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span>Journal & thrust bearings</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span>Locknuts, gaskets, O-rings</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span>Carbon bushes, view glasses</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span>Magnetic filters, oil & seal coolers</span>
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-3">Services Offered:</h3>
-                  <ul className="space-y-2">
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span>Major overhauling</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span>Cartridge removal & installation</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span>De-staging & impeller trimming</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span>Energy saving & performance upgrades</span>
-                    </li>
-                  </ul>
-                </div>
+              <div className="space-y-2 mb-6">
+                <h3 className="text-xl font-bold">Spares Supplied:</h3>
+                <ul className="list-disc list-inside space-y-1 ml-4 text-muted-foreground">
+                  <li>Shafts, impellers, wear rings</li>
+                  <li>Balance drums, thrust collar nuts</li>
+                  <li>Journal & thrust bearings</li>
+                  <li>Locknuts, gaskets, O-rings</li>
+                  <li>Carbon bushes, view glasses</li>
+                  <li>Magnetic filters, oil & seal coolers</li>
+                </ul>
               </div>
-              <Button variant="outline" asChild>
-                <Link href="/contact" className="group">
-                  Learn More About BFP Services
-                  <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-                </Link>
-              </Button>
+              <div className="space-y-2">
+                <h3 className="text-xl font-bold">Services Offered:</h3>
+                <ul className="list-disc list-inside space-y-1 ml-4 text-muted-foreground">
+                  <li>Major overhauling</li>
+                  <li>Cartridge removal & installation</li>
+                  <li>De-staging & impeller trimming</li>
+                  <li>Energy saving & performance upgrades</li>
+                </ul>
+              </div>
+            </div>
+            <div className="md:w-1/2 grid grid-cols-2 gap-4">
+              <div className="rounded-xl overflow-hidden shadow-md h-64 relative">
+                <Image 
+                  src="/Web Pics1/Equipment/Balance drum.jpg" 
+                  alt="Balance Drum" 
+                  fill 
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
+              </div>
+              <div className="rounded-xl overflow-hidden shadow-md h-64 relative">
+                <Image 
+                  src="/Web Pics1/Equipment/BFP-wearings-1.jpg" 
+                  alt="BFP Wearings" 
+                  fill 
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
+              </div>
+              <div className="rounded-xl overflow-hidden shadow-md h-64 col-span-2 relative">
+                <Image 
+                  src="/Web Pics1/Equipment/BFP-Shaft-cylindrical grinding.jpg" 
+                  alt="BFP Shaft Grinding" 
+                  fill 
+                  className="object-cover"
+                  sizes="100vw"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* More Equipment Grid */}
+      {/* Booster Pumps & CEP */}
+      <section className="py-16 bg-background">
+        <div className="container">
+          <div className="grid md:grid-cols-2 gap-12 mb-12">
+            {/* Booster Pumps */}
+            <div className="space-y-6">
+              <h2 className="text-3xl font-bold">🔄 BFP Booster Pumps</h2>
+              <p className="text-lg">
+                Reliable support for booster pump spares and refurbishment.
+              </p>
+              <div className="rounded-xl overflow-hidden shadow-md h-64 relative mb-6">
+                <Image 
+                  src="/Web Pics1/Equipment/Booster pump casing pattern.jpg" 
+                  alt="Booster Pump Casing" 
+                  fill 
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-xl font-bold">Spares Supplied:</h3>
+                <ul className="list-disc list-inside space-y-1 ml-4 text-muted-foreground">
+                  <li>Casings, diffusers (DE/NDE)</li>
+                  <li>Shafts, sleeves, wear rings</li>
+                  <li>Impellers, journal bearings</li>
+                  <li>Bearing housings, discharge bellows</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* CEP */}
+            <div className="space-y-6">
+              <h2 className="text-3xl font-bold">💧 Condensate Extraction Pumps (CEP)</h2>
+              <p className="text-lg">
+                High-quality CEP spares with full mechanical and hydraulic support.
+              </p>
+              <div className="rounded-xl overflow-hidden shadow-md h-64 relative mb-6">
+                <Image 
+                  src="/Web Pics1/Equipment/CEP-Thrust pads cover.jpg" 
+                  alt="CEP Thrust Pads" 
+                  fill 
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-xl font-bold">Spares Supplied:</h3>
+                <ul className="list-disc list-inside space-y-1 ml-4 text-muted-foreground">
+                  <li>Upper/lower shafts, stage sleeves</li>
+                  <li>Impellers, wear rings</li>
+                  <li>Thrust & guide bearings</li>
+                  <li>Oil level indicators, couplings</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Vacuum Pumps & White Metal Bearings */}
+      <section className="py-16 bg-gradient-secondary">
+        <div className="container">
+          <div className="grid md:grid-cols-2 gap-12 mb-12">
+            {/* Vacuum Pumps */}
+            <div className="space-y-6">
+              <h2 className="text-3xl font-bold">🌀 Condenser Vacuum Pumps</h2>
+              <p className="text-lg">
+                Precision spares and service support for vacuum pump units.
+              </p>
+              <div className="grid grid-cols-2 gap-4 mb-6">
+                <div className="rounded-xl overflow-hidden shadow-md h-48 relative">
+                  <Image 
+                    src="/Web Pics1/Equipment/vacuum pump and booster pump casing.jpg" 
+                    alt="Vacuum Pump Casing" 
+                    fill 
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 25vw"
+                    priority
+                  />
+                </div>
+                <div className="rounded-xl overflow-hidden shadow-md h-48 relative">
+                  <Image 
+                    src="/Web Pics1/Equipment/Vacuum pump services-1.jpg" 
+                    alt="Vacuum Pump Services" 
+                    fill 
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 25vw"
+                    priority
+                  />
+                </div>
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-xl font-bold">Spares Supplied:</h3>
+                <ul className="list-disc list-inside space-y-1 ml-4 text-muted-foreground">
+                  <li>First and second stage bodies</li>
+                  <li>Brackets, cones, manifolds</li>
+                  <li>Gland packs, shafts, rotors</li>
+                  <li>Gaskets, shims, bearing housings</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* White Metal Bearings */}
+            <div className="space-y-6">
+              <h2 className="text-3xl font-bold">⚪ White Metal Bearings & Rebabbitting</h2>
+              <p className="text-lg">
+                Extend the life of bearings with our rebabbitting and precision finishing services.
+              </p>
+              <div className="rounded-xl overflow-hidden shadow-md h-48 relative mb-6">
+                <Image 
+                  src="/Web Pics1/Equipment/Journal Bearings.jpg" 
+                  alt="Journal Bearings" 
+                  fill 
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-xl font-bold">We Offer:</h3>
+                <ul className="list-disc list-inside space-y-1 ml-4 text-muted-foreground">
+                  <li>Supply of new white metal bearings</li>
+                  <li>Old babbitt removal and surface prep</li>
+                  <li>Static and centrifugal rebabbitting</li>
+                  <li>Precision machining and finishing</li>
+                  <li>NDT testing and quality assurance</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Other Equipment Gallery */}
       <section className="py-16 bg-background">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl font-bold mb-4">Other Critical Equipment & Spares</h2>
-            <p className="text-muted-foreground">
-              We provide comprehensive solutions for a wide range of industrial equipment, from supply to maintenance and refurbishment.
+            <h2 className="text-3xl font-bold mb-4">🔧 Other Critical Equipment & Spares</h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              Our comprehensive range includes components for coolers, condensers, industrial fans, ESP systems, barring gear, pump systems, and more.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card className="border shadow-sm hover:shadow-md transition-all duration-300">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-4">BFP Booster Pumps</h3>
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="text-base font-semibold mb-2">Spares Supplied:</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Casings, diffusers (DE/NDE), shafts, sleeves, wear rings, impellers, journal bearings, bearing housings, discharge bellows
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="text-base font-semibold mb-2">Services Offered:</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Booster pump overhauling, diffuser & casing wear-out repairs, energy-saving modifications
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border shadow-sm hover:shadow-md transition-all duration-300">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-4">Condensate Extraction Pumps (CEP)</h3>
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="text-base font-semibold mb-2">Spares Supplied:</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Upper/lower shafts, stage sleeves, impellers, wear rings, thrust & guide bearings, oil level indicators, couplings, gaskets, bearing coolers
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="text-base font-semibold mb-2">Services Offered:</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Complete overhauls, energy-saving retrofits, de-staging and impeller trimming
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border shadow-sm hover:shadow-md transition-all duration-300">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-4">Condenser Vacuum Pumps</h3>
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="text-base font-semibold mb-2">Spares Supplied:</h4>
-                    <p className="text-sm text-muted-foreground">
-                      First and second stage bodies, brackets, cones, manifolds, gland packs, shafts, rotors, gaskets, shims, bearing housings, couplings
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="text-base font-semibold mb-2">Services Offered:</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Major overhauling, cones and casing wear repair, rotor rebalancing and inspection
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border shadow-sm hover:shadow-md transition-all duration-300">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-4">White Metal Bearings & Rebabbitting</h3>
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="text-base font-semibold mb-2">We Offer:</h4>
-                    <ul className="text-sm text-muted-foreground space-y-1">
-                      <li>• Supply of new white metal bearings</li>
-                      <li>• Old babbitt removal and surface prep</li>
-                      <li>• Static and centrifugal rebabbitting</li>
-                      <li>• Precision machining and finishing</li>
-                      <li>• NDT testing and quality assurance</li>
-                    </ul>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border shadow-sm hover:shadow-md transition-all duration-300">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-4">Coolers & Condensers</h3>
-                <div className="space-y-4">
-                  <div>
-                    <p className="text-sm text-muted-foreground">
-                      Tube bundles, seal oil coolers, lube oil coolers, BFP, CEP, CW pump & ID fan cooler replacements
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border shadow-sm hover:shadow-md transition-all duration-300">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-4">Industrial Fans & Dampers</h3>
-                <div className="space-y-4">
-                  <div>
-                    <p className="text-sm text-muted-foreground">
-                      PA, FD, ID, Seal Air Fans, bearing housings, dampers, SADC scales
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border shadow-sm hover:shadow-md transition-all duration-300">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-4">ESP Components</h3>
-                <div className="space-y-4">
-                  <div>
-                    <p className="text-sm text-muted-foreground">
-                      Electrodes, hammers, bushes, solenoid valves, rapping shafts, fluidizing pads
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border shadow-sm hover:shadow-md transition-all duration-300">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-4">Barring Gear Components</h3>
-                <div className="space-y-4">
-                  <div>
-                    <p className="text-sm text-muted-foreground">
-                      Gears, shafts, springs, couplings, handles and other critical barring gear components
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border shadow-sm hover:shadow-md transition-all duration-300">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-4">Pump Systems & Spares</h3>
-                <div className="space-y-4">
-                  <div>
-                    <p className="text-sm text-muted-foreground">
-                      CW pumps, VTL pumps, vacuum & slurry pumps, guide bearings, sleeves, shafts, hydraulic and dosing pumps
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div className="rounded-xl overflow-hidden shadow-md aspect-square relative">
+              <Image 
+                src="/Web Pics1/Equipment/Oil coolers.jpg" 
+                alt="Oil Coolers" 
+                fill 
+                className="object-cover transition-transform hover:scale-105 duration-300"
+                sizes="(max-width: 768px) 50vw, 25vw"
+              />
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-md aspect-square relative">
+              <Image 
+                src="/Web Pics1/Equipment/filters.jpg" 
+                alt="Filters" 
+                fill 
+                className="object-cover transition-transform hover:scale-105 duration-300"
+                sizes="(max-width: 768px) 50vw, 25vw"
+              />
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-md aspect-square relative">
+              <Image 
+                src="/Web Pics1/Equipment/Impellers.jpg" 
+                alt="Impellers" 
+                fill 
+                className="object-cover transition-transform hover:scale-105 duration-300"
+                sizes="(max-width: 768px) 50vw, 25vw"
+              />
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-md aspect-square relative">
+              <Image 
+                src="/Web Pics1/Equipment/Tuffen glass.jpg" 
+                alt="Tuffen Glass" 
+                fill 
+                className="object-cover transition-transform hover:scale-105 duration-300"
+                sizes="(max-width: 768px) 50vw, 25vw"
+              />
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-md aspect-square relative">
+              <Image 
+                src="/Web Pics1/Equipment/piston rings.jpg" 
+                alt="Piston Rings" 
+                fill 
+                className="object-cover transition-transform hover:scale-105 duration-300"
+                sizes="(max-width: 768px) 50vw, 25vw"
+              />
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-md aspect-square relative">
+              <Image 
+                src="/Web Pics1/Equipment/Vacuum pump services-3.jpg" 
+                alt="Vacuum Pump Services" 
+                fill 
+                className="object-cover transition-transform hover:scale-105 duration-300"
+                sizes="(max-width: 768px) 50vw, 25vw"
+              />
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-md aspect-square relative">
+              <Image 
+                src="/Web Pics1/Equipment/Special bolts.jpg" 
+                alt="Special Bolts" 
+                fill 
+                className="object-cover transition-transform hover:scale-105 duration-300"
+                sizes="(max-width: 768px) 50vw, 25vw"
+              />
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-md aspect-square relative">
+              <Image 
+                src="/Web Pics1/Equipment/Basket strainer.jpg" 
+                alt="Basket Strainer" 
+                fill 
+                className="object-cover transition-transform hover:scale-105 duration-300"
+                sizes="(max-width: 768px) 50vw, 25vw"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Large CTA Section */}
+      {/* CTA Section */}
       <section className="py-16 bg-gradient-secondary">
         <div className="container">
           <div className="bg-background rounded-2xl shadow-xl p-8 md:p-12">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
-                <h2 className="text-3xl font-bold mb-4">Need Specialized Equipment or Spares?</h2>
-                <p className="text-muted-foreground mb-6">
-                  Our team of engineers can help you identify the right components and solutions for your industrial equipment needs. Contact us for expert guidance and reliable spares.
-                </p>
-                <Button size="lg" asChild>
-                  <Link href="/contact">
-                    Contact Our Equipment Specialists
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </div>
-              <div className="relative rounded-xl overflow-hidden h-64">
-                <Image
-                  src="/Web Pics1/Services/BFP/Services-BFP-2.jpg"
-                  alt="Industrial Equipment Specialists"
-                  fill
-                  className="object-cover"
-                />
-              </div>
+            <div className="text-center max-w-3xl mx-auto">
+              <h2 className="text-3xl font-bold mb-4">Need Custom Equipment Solutions?</h2>
+              <p className="text-muted-foreground mb-8">
+                Contact us today to discuss your specific requirements for equipment spares, repairs, or maintenance services.
+              </p>
+              <Button size="lg" asChild>
+                <Link href="/contact">
+                  Request a Quote
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
             </div>
           </div>
         </div>

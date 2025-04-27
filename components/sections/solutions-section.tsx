@@ -124,8 +124,6 @@ export default function SolutionsSection() {
                         </div>
                       ))}
                     </div>
-
-                    <Button>Learn More</Button>
                   </div>
 
                   <div className="order-1 md:order-2">
