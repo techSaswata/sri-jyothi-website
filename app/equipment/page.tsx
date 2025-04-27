@@ -407,7 +407,7 @@ export default function EquipmentPage() {
       </section>
 
       {/* Standard CTA Section */}
-      <CtaSection />
+      {/* <CtaSection /> */}
     </>
   )
 } 
