@@ -12,110 +12,81 @@ const images = [
   '/Web Pics1/Home page/Home-Header-5.jpeg',
 ];
 
+const TRANSITION_DURATION = 700; // ms - Match this with CSS duration
+
 export default function CarouselSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [nextIndex, setNextIndex] = useState(1);
   const [transitioning, setTransitioning] = useState(false);
-  const [transitionPhase, setTransitionPhase] = useState('idle'); // 'idle', 'blackout', 'reveal'
 
-  // Auto-advance timer with professional transition
+  // Auto-advance timer
   useEffect(() => {
     const interval = setInterval(() => {
       if (!transitioning) {
-        startTransition((currentIndex + 1) % images.length);
+        goToNext();
       }
-    }, 3000);
+    }, 3000); // Change image every 3 seconds
 
     return () => clearInterval(interval);
   }, [currentIndex, transitioning]);
 
-  // Handle transition phases
-  const startTransition = (targetIndex: number) => {
+  // Function to handle setting the index and transition state
+  const setActiveIndex = (index: number) => {
     if (transitioning) return;
-    
     setTransitioning(true);
-    setNextIndex(targetIndex);
-    
-    // Phase 1: Black overlay appears
-    setTransitionPhase('blackout');
-    
-    // Phase 2: After blackout, swap the images
+    setCurrentIndex(index);
+
+    // Allow transition to complete before enabling controls again
     setTimeout(() => {
-      setCurrentIndex(targetIndex);
-      setTransitionPhase('reveal');
-      
-      // Phase 3: Black overlay disappears, showing new image
-      setTimeout(() => {
-        setTransitionPhase('idle');
-        setTransitioning(false);
-      }, 600);
-    }, 300);
+      setTransitioning(false);
+    }, TRANSITION_DURATION);
   };
 
   const goToPrevious = () => {
-    if (transitioning) return;
     const prevIndex = (currentIndex - 1 + images.length) % images.length;
-    startTransition(prevIndex);
+    setActiveIndex(prevIndex);
   };
 
   const goToNext = () => {
-    if (transitioning) return;
     const nextIdx = (currentIndex + 1) % images.length;
-    startTransition(nextIdx);
+    setActiveIndex(nextIdx);
   };
 
   const goToSlide = (index: number) => {
     if (index === currentIndex || transitioning) return;
-    startTransition(index);
+    setActiveIndex(index);
   };
 
   return (
     <div className="relative w-full h-[600px] overflow-hidden">
-      {/* Main image container */}
+      {/* Image container */}
       <div className="relative w-full h-full">
-        {/* Current image */}
-        <div className="absolute inset-0 w-full h-full">
-          <Image
-            src={images[currentIndex]}
-            alt={`Slide ${currentIndex + 1}`}
-            fill
-            sizes="100vw"
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/10"></div>
-        </div>
-        
-        {/* Black overlay for transition effect */}
-        <div 
-          className={`absolute inset-0 bg-black transition-opacity duration-500 ease-in-out z-20 ${
-            transitionPhase === 'blackout' 
-              ? 'opacity-100' 
-              : transitionPhase === 'reveal' 
-                ? 'opacity-0' 
-                : 'opacity-0 -z-10'
-          }`}
-        ></div>
-        
-        {/* Next image (hidden until transition) */}
-        {transitionPhase !== 'idle' && (
-          <div className={`absolute inset-0 w-full h-full ${transitionPhase === 'reveal' ? 'z-10' : '-z-10'}`}>
+        {images.map((src, index) => (
+          <div
+            key={src} // Use image src as key assuming they are unique
+            className={`absolute inset-0 w-full h-full transition-opacity duration-${TRANSITION_DURATION} ease-in-out`}
+            style={{
+              opacity: index === currentIndex ? 1 : 0,
+              zIndex: index === currentIndex ? 10 : 0, // Ensure active image is on top
+            }}
+          >
             <Image
-              src={images[nextIndex]}
-              alt={`Slide ${nextIndex + 1}`}
+              src={src}
+              alt={`Slide ${index + 1}`}
               fill
               sizes="100vw"
               className="object-cover"
+              priority={index === 0} // Prioritize loading the first image
             />
+            {/* Optional subtle overlay on each image */}
             <div className="absolute inset-0 bg-black/10"></div>
           </div>
-        )}
+        ))}
       </div>
-      
+
       {/* Left Arrow */}
       <button
         onClick={goToPrevious}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition-all duration-200 opacity-70 hover:opacity-100 z-30"
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition-all duration-200 opacity-70 hover:opacity-100 z-30 disabled:opacity-30 disabled:cursor-not-allowed"
         aria-label="Previous slide"
         disabled={transitioning}
       >
@@ -127,7 +98,7 @@ export default function CarouselSection() {
       {/* Right Arrow */}
       <button
         onClick={goToNext}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition-all duration-200 opacity-70 hover:opacity-100 z-30"
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition-all duration-200 opacity-70 hover:opacity-100 z-30 disabled:opacity-30 disabled:cursor-not-allowed"
         aria-label="Next slide"
         disabled={transitioning}
       >
@@ -135,18 +106,14 @@ export default function CarouselSection() {
           <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
         </svg>
       </button>
-      
+
       {/* Navigation Dots */}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 bg-black/20 px-4 py-2 rounded-full z-30">
         {images.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentIndex 
-                ? 'bg-white scale-110' 
-                : 'bg-white/50 hover:bg-white/75'
-            }`}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex ? 'bg-white scale-110' : 'bg-white/50 hover:bg-white/75'} disabled:opacity-50 disabled:cursor-not-allowed`}
             aria-label={`Go to slide ${index + 1}`}
             disabled={transitioning}
           />

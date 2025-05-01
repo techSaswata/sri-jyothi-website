@@ -178,8 +178,8 @@ export default function AboutSection() {
         </div>
         
         {/* Middle Section - Core Values and Why Choose Us side by side */}
-        <div className="grid lg:grid-cols-2 gap-16 xl:gap-20 items-start mb-16">
-          {/* Left Column - Core Values */}
+        {/* <div className="grid lg:grid-cols-2 gap-16 xl:gap-20 items-start mb-16">
+          
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -214,7 +214,7 @@ export default function AboutSection() {
             </motion.div>
           </motion.div>
 
-          {/* Right Column - Why Choose Us */}
+          
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -251,7 +251,7 @@ export default function AboutSection() {
               </div>
             </motion.div>
           </motion.div>
-        </div>
+        </div> */}
 
         {/* Bottom Section - CTA */}
         <motion.div
