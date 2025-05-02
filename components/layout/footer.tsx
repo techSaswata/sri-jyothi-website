@@ -2,14 +2,14 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Facebook, Twitter, Instagram, Linkedin, Youtube, Mail, Phone, MapPin, ArrowRight } from "lucide-react"
+import { Mail, Phone, MapPin, ArrowRight } from "lucide-react"
 
 export default function Footer() {
   return (
     <footer className="bg-gradient-secondary border-t">
       <div className="container">
         {/* Newsletter Section */}
-        <div className="py-12 border-b">
+        {/* <div className="py-12 border-b">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-2xl font-bold">Stay Updated with Our Newsletter</h3>
@@ -25,7 +25,7 @@ export default function Footer() {
               </Button>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Main Footer Content */}
         <div className="py-16">
@@ -50,28 +50,6 @@ export default function Footer() {
               <p className="text-muted-foreground">
                 Providing innovative engineering solutions and services to industries across the globe since 2005.
               </p>
-              <div className="flex space-x-4">
-                <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  <Facebook className="h-5 w-5" />
-                  <span className="sr-only">Facebook</span>
-                </Link>
-                <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  <Twitter className="h-5 w-5" />
-                  <span className="sr-only">Twitter</span>
-                </Link>
-                <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  <Instagram className="h-5 w-5" />
-                  <span className="sr-only">Instagram</span>
-                </Link>
-                <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  <Linkedin className="h-5 w-5" />
-                  <span className="sr-only">LinkedIn</span>
-                </Link>
-                <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  <Youtube className="h-5 w-5" />
-                  <span className="sr-only">YouTube</span>
-                </Link>
-              </div>
             </div>
 
             {/* Quick Links */}
@@ -167,18 +145,19 @@ export default function Footer() {
             <div>
               <h3 className="text-lg font-bold mb-6">Contact Us</h3>
               <ul className="space-y-4">
-                <li className="flex items-start">
-                  <MapPin className="h-5 w-5 text-primary mr-3 mt-0.5" />
+                <li className="flex items-center">
+                  <MapPin className="h-8 w-8 text-primary mr-3" />
                   <div className="text-muted-foreground">
-                    <p className="font-medium mb-1">Vijaywada:</p>
-                    <p>D.No : 2-306/A, Main Road, Polavaram (Po), Chatrai (Md), Eluru (Dt)-521214. AP</p>
                     <p className="font-medium mt-4 mb-1">Hyderabad:</p>
                     <p>Plot No. 61/D, Phase-1, I.D.A., Jeedimetla, Hyderabad – 500055</p>
                   </div>
                 </li>
                 <li className="flex items-center">
-                  <Phone className="h-5 w-5 text-primary mr-3" />
-                  <span className="text-muted-foreground">+91 77229 44331, +91 96303 11331</span>
+                  <Phone className="h-4 w-4 text-primary mr-3" />
+                  <div className="flex flex-col">
+                    <span className="text-muted-foreground">+91 77229 44331</span>
+                    <span className="text-muted-foreground">+91 96303 11331</span>
+                  </div>
                 </li>
                 <li className="flex items-center">
                   <Mail className="h-5 w-5 text-primary mr-3" />
@@ -190,11 +169,11 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="py-6 border-t text-center md:flex md:justify-between md:text-left">
+        <div className="py-6 border-t text-center">
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Sri Jyothi Engineering Services. All rights reserved.
           </p>
-          <div className="mt-4 md:mt-0 flex justify-center md:justify-end space-x-6">
+          {/* <div className="mt-4 md:mt-0 flex justify-center md:justify-end space-x-6">
             <Link href="/privacy-policy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
               Privacy Policy
             </Link>
@@ -207,7 +186,7 @@ export default function Footer() {
             <Link href="/sitemap" className="text-sm text-muted-foreground hover:text-primary transition-colors">
               Sitemap
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

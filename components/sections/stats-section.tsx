@@ -1,8 +1,7 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
-import { motion, useInView, useAnimation } from "framer-motion"
-import { Users, Award, Clock, Briefcase, Globe, ThumbsUp } from "lucide-react"
+import { motion } from "framer-motion"
+import { Award, Clock, Globe, ThumbsUp } from "lucide-react"
 
 const stats = [
   // {
@@ -16,17 +15,12 @@ const stats = [
     value: "22+",
     label: "Years Experience",
     description: "Delivering excellence in engineering services since 2008",
-    finalValue: 22,
-    suffix: "+",
   },
   {
     icon: <Clock className="h-8 w-8" />,
     value: "24/7",
     label: "Support",
     description: "Round-the-clock assistance for all your engineering needs",
-    finalValue: 24,
-    suffix: "/7",
-    isFixed: true,
   },
   // {
   //   icon: <Briefcase className="h-8 w-8" />,
@@ -39,81 +33,17 @@ const stats = [
     value: "15+",
     label: "Industries Served",
     description: "Providing engineering solutions to a wide range of industries",
-    finalValue: 15,
-    suffix: "+",
   },
   {
     icon: <ThumbsUp className="h-8 w-8" />,
     value: "99%",
     label: "Client Satisfaction",
     description: "Committed to exceeding client expectations",
-    finalValue: 99,
-    suffix: "%",
-    isFixed: true,
   },
 ]
 
 export default function StatsSection() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
-  const controls = useAnimation()
-  const [counters, setCounters] = useState(stats.map(() => 0))
-  const [animationStarted, setAnimationStarted] = useState(false)
-
-  // Start animation when section is in view
-  useEffect(() => {
-    if (isInView) {
-      controls.start("visible")
-      if (!animationStarted) {
-        setAnimationStarted(true)
-        animateCounters()
-      }
-    }
-  }, [isInView, controls, animationStarted])
-
-  // Counter animation function
-  const animateCounters = () => {
-    stats.forEach((stat, index) => {
-      // Skip animation for fixed values like 24/7
-      if (stat.isFixed) {
-        setCounters(prevCounters => {
-          const newCounters = [...prevCounters]
-          newCounters[index] = stat.finalValue
-          return newCounters
-        })
-        return
-      }
-
-      // Animation duration in ms
-      const duration = 2000
-      // How many steps in the animation
-      const steps = Math.min(stat.finalValue, 30) // Max 30 steps for smoother animation
-      // Increment per step
-      const increment = stat.finalValue / steps
-      // Start value
-      let currentValue = 0
-      // Current step
-      let currentStep = 0
-
-      // Set up the interval
-      const timer = setInterval(() => {
-        currentStep++
-        currentValue = Math.min(currentStep * increment, stat.finalValue)
-
-        // Update the counter state
-        setCounters(prevCounters => {
-          const newCounters = [...prevCounters]
-          newCounters[index] = Math.round(currentValue)
-          return newCounters
-        })
-
-        // Clear interval when we reach the final value
-        if (currentValue >= stat.finalValue) {
-          clearInterval(timer)
-        }
-      }, duration / steps)
-    })
-  }
+  // No animation state or logic needed anymore
 
   const containerVariants = {
     hidden: {},
@@ -147,10 +77,10 @@ export default function StatsSection() {
         </div>
 
         <motion.div
-          ref={ref}
           variants={containerVariants}
           initial="hidden"
-          animate={controls}
+          whileInView="visible" // Use whileInView for simple entrance animation
+          viewport={{ once: true, amount: 0.2 }} // Configure viewport options
           className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto"
         >
           {stats.map((stat, index) => (
@@ -161,7 +91,7 @@ export default function StatsSection() {
             >
               <div className="p-4 rounded-lg bg-primary/10 text-primary mb-4">{stat.icon}</div>
               <div className="text-4xl font-bold text-primary mb-2">
-                {stat.isFixed ? stat.value : counters[index] + stat.suffix}
+                {stat.value} {/* Display static value directly */}
               </div>
               <div className="font-medium text-lg mb-3">{stat.label}</div>
               <p className="text-sm text-muted-foreground">{stat.description}</p>

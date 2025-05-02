@@ -111,19 +111,37 @@ export default function SolutionsSection() {
 
             {solutions.map((solution) => (
               <TabsContent key={solution.id} value={solution.id} className="mt-0">
-                <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div className="grid md:grid-cols-2 gap-12 items-center">
                   <div className="order-2 md:order-1">
-                    <h3 className="text-2xl font-bold mb-4">{solution.title} Solutions</h3>
-                    <p className="text-muted-foreground mb-6">{solution.description}</p>
+                    <h3 className={`text-2xl font-bold mb-4 ${solution.id === 'manufacturing' ? 'md:text-3xl' : ''}`}>
+                      {solution.title} Solutions
+                    </h3>
+                    <p className={`text-muted-foreground mb-6 ${solution.id === 'manufacturing' ? 'text-lg' : ''}`}>
+                      {solution.description}
+                    </p>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
-                      {solution.features.map((feature, index) => (
-                        <div key={index} className="flex items-start space-x-2">
-                          <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                          <span>{feature}</span>
-                        </div>
-                      ))}
-                    </div>
+                    {solution.id === 'manufacturing' ? (
+                      <div className="grid grid-cols-1 gap-4 mb-8">
+                        {solution.features.map((feature, index) => (
+                          <div
+                            key={index}
+                            className="bg-card/60 dark:bg-card/40 backdrop-blur-sm border rounded-lg p-4 shadow-sm flex items-center space-x-3 hover:shadow-md transition-shadow duration-200"
+                          >
+                            <CheckCircle className="h-6 w-6 text-primary shrink-0" />
+                            <span className="text-lg">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                        {solution.features.map((feature, index) => (
+                          <div key={index} className="flex items-start space-x-2">
+                            <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                            <span>{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
 
                   <div className="order-1 md:order-2">
