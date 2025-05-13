@@ -79,15 +79,7 @@ const services = [
       "Precision shaft and turbine rotor bend removal to restore critical components to original specifications.",
     image: "/images/service1.jpg",
     link: "/services/bend-removal",
-  },
-  {
-    icon: <Cog className="h-10 w-10" />,
-    title: "Dynamic Balancing",
-    description:
-      "Precision balancing services to improve performance, reliability, and safety of rotating equipment.",
-    image: "/images/service2.jpg",
-    link: "/services/dynamic-balancing",
-  },
+  }
 ]
 
 export default function ServicesSection() {
