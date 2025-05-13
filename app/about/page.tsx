@@ -63,19 +63,19 @@ export default function AboutPage() {
       {/* Our Vision Section */}
       <section className="py-16 bg-background">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
+          <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Our Core Philosophy</h2>
-            <p className="text-lg">
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               The guiding principles that drive our work and relationships with clients
             </p>
           </div>
           
           {/* Mission, Vision, Values Section */}
-          <div className="py-12">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+          <div className="py-16">
+            <div className="flex flex-col md:flex-row justify-between max-w-6xl mx-auto">
               {/* Mission */}
-              <div className="flex flex-col items-center text-center">
-                <div className="rounded-full bg-red-50 p-5 mb-6 inline-block shadow-sm">
+              <div className="flex flex-col items-center text-center md:w-1/3 px-6 relative">
+                <div className="rounded-full bg-red-50 p-6 mb-6 inline-block shadow-sm">
                   <Image 
                     src="/images/icons/mission-alt.svg" 
                     alt="Our Mission" 
@@ -90,11 +90,14 @@ export default function AboutPage() {
                 <p className="text-gray-600 leading-relaxed">
                   To provide innovative and sustainable engineering solutions that enhance operational efficiency, reduce costs, and contribute to the success of our clients' businesses.
                 </p>
+                
+                {/* Right border/separator (visible on md screens and up) */}
+                <div className="hidden md:block absolute right-0 top-1/4 bottom-1/4 w-px bg-gray-200"></div>
               </div>
 
               {/* Vision */}
-              <div className="flex flex-col items-center text-center">
-                <div className="rounded-full bg-teal-50 p-5 mb-6 inline-block shadow-sm">
+              <div className="flex flex-col items-center text-center md:w-1/3 px-6 my-12 md:my-0 relative">
+                <div className="rounded-full bg-teal-50 p-6 mb-6 inline-block shadow-sm">
                   <Image 
                     src="/images/icons/vision-alt.svg" 
                     alt="Our Vision" 
@@ -109,11 +112,14 @@ export default function AboutPage() {
                 <p className="text-gray-600 leading-relaxed">
                   To be the most trusted specialist services group in the delivery of Erection, Commissioning, Maintenance, and Manufacture & Supply of spares.
                 </p>
+                
+                {/* Right border/separator (visible on md screens and up) */}
+                <div className="hidden md:block absolute right-0 top-1/4 bottom-1/4 w-px bg-gray-200"></div>
               </div>
 
               {/* Values */}
-              <div className="flex flex-col items-center text-center">
-                <div className="rounded-full bg-amber-50 p-5 mb-6 inline-block shadow-sm">
+              <div className="flex flex-col items-center text-center md:w-1/3 px-6">
+                <div className="rounded-full bg-amber-50 p-6 mb-6 inline-block shadow-sm">
                   <Image 
                     src="/images/icons/values.svg" 
                     alt="Our Values" 
