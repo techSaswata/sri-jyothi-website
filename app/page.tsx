@@ -5,7 +5,7 @@ import SolutionsSection from "@/components/sections/solutions-section"
 import AboutSection from "@/components/sections/about-section"
 import TestimonialsSection from "@/components/sections/testimonials-section"
 import ContactSection from "@/components/sections/contact-section"
-import CtaSection from "@/components/sections/cta-section"
+import CustomEquipmentCta from "@/components/sections/custom-equipment-cta"
 import PartnersSection from "@/components/sections/partners-section"
 import CarouselSection from "@/components/sections/carousel-section"
 import GifSection from "@/components/sections/gif-section"
@@ -21,7 +21,7 @@ export default function Home() {
       <ServicesSection />
       <SolutionsSection />
       {/* <TestimonialsSection /> */}
-      <CtaSection />
+      <CustomEquipmentCta />
     </>
   )
 }
