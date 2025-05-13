@@ -146,9 +146,9 @@ export default function Navbar() {
           <Image
             src="/images/logo copy.png"
             alt="Sri Jyothi Engineering Services"
-            width={40}
-            height={40}
-            className="h-10 w-auto"
+            width={60}
+            height={60}
+            className="h-16 w-auto"
           />
           <div className="hidden sm:block">
             <h1 className="text-base font-bold leading-tight">
@@ -178,7 +178,7 @@ export default function Navbar() {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <Link href="/services" legacyBehavior passHref>
-                  <NavigationMenuTrigger className={pathname.startsWith("/services") ? "text-primary" : ""}>
+                  <NavigationMenuTrigger className="text-base font-normal" data-active={pathname.startsWith("/services")}>
                     Services
                   </NavigationMenuTrigger>
                 </Link>
@@ -257,9 +257,9 @@ export default function Navbar() {
                     <Image
                       src="/images/logo.png"
                       alt="Sri Jyothi Engineering Services"
-                      width={40}
-                      height={40}
-                      className="h-10 w-auto"
+                      width={60}
+                      height={60}
+                      className="h-16 w-auto"
                     />
                     <span className="font-bold">Sri Jyothi</span>
                   </Link>
