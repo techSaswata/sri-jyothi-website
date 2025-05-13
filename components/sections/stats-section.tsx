@@ -12,15 +12,15 @@ const stats = [
   // },
   {
     icon: <Award className="h-8 w-8" />,
-    value: "22+",
-    label: "Years Experience",
-    description: "Delivering excellence in engineering services since 2008",
+    value: "24+",
+    label: "Years of Expertise",
+    description: "in industrial engineering",
   },
   {
     icon: <Clock className="h-8 w-8" />,
     value: "24/7",
-    label: "Support",
-    description: "Round-the-clock assistance for all your engineering needs",
+    label: "Innovation",
+    description: "Innovative & Cost-Effective Solutions",
   },
   // {
   //   icon: <Briefcase className="h-8 w-8" />,
@@ -32,13 +32,13 @@ const stats = [
     icon: <Globe className="h-8 w-8" />,
     value: "15+",
     label: "Industries Served",
-    description: "Providing engineering solutions to a wide range of industries",
+    description: "Reliable, Precision-Engineered Components",
   },
   {
     icon: <ThumbsUp className="h-8 w-8" />,
-    value: "99%",
-    label: "Client Satisfaction",
-    description: "Committed to exceeding client expectations",
+    value: "100%",
+    label: "Customer Focus",
+    description: "Customer-First Approach for Tailored Solutions",
   },
 ]
 
@@ -66,13 +66,12 @@ export default function StatsSection() {
   }
 
   return (
-    <section className="bg-gradient-secondary py-12 md:py-20">
+    <section className="bg-section-light py-12 md:py-20">
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-10">
-           <h2 className="section-title mb-3">Our Impact in Numbers</h2>
+           <h2 className="section-title mb-3">Why Choose SRI JYOTHI ENGINEERING SERVICES?</h2>
           <p className="section-subtitle">
-            We take pride in our achievements and the trust our clients place in us. Here's a glimpse of our journey in
-            numbers.
+            Our Vision: To provide world-class engineering solutions that enhance asset performance, reduce operational costs, and maximize reliability.
           </p>
         </div>
 
@@ -94,7 +93,7 @@ export default function StatsSection() {
                 {stat.value}
               </div>
               <div className="font-medium text-base mb-2">{stat.label}</div>
-              <p className="text-xs text-muted-foreground">{stat.description}</p>
+              <p className="text-body-sm">{stat.description}</p>
             </motion.div>
           ))}
         </motion.div>

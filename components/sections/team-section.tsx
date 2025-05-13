@@ -89,10 +89,10 @@ export default function TeamSection() {
   }
 
   return (
-    <section className="py-20 bg-gradient-secondary" id="team">
+    <section className="py-20 bg-section-alternate" id="team">
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="section-title mb-4">Meet Our Team</h2>
+          <h2 className="section-title mb-4 bg-gradient-to-r from-primary via-blue-600 to-primary bg-clip-text text-transparent">Meet Our Team</h2>
           <p className="section-subtitle">
             Our team of experienced professionals is dedicated to providing the highest quality engineering services and
             solutions.
@@ -119,9 +119,9 @@ export default function TeamSection() {
                     />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold mb-1">{member.name}</h3>
+                    <h3 className="text-heading-4 mb-1">{member.name}</h3>
                     <p className="text-primary font-medium mb-4">{member.position}</p>
-                    <p className="text-muted-foreground mb-4 text-sm">{member.bio}</p>
+                    <p className="text-body-sm mb-4">{member.bio}</p>
                     <div className="flex space-x-3">
                       <a
                         href={member.linkedin}

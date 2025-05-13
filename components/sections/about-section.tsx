@@ -84,7 +84,7 @@ export default function AboutSection() {
   }
 
   return (
-    <section className="section-padding py-12 md:py-16 relative overflow-hidden bg-gradient-to-br from-background via-blue-50/10 to-background dark:from-background dark:via-blue-950/10 dark:to-background" id="about">
+    <section className="section-padding py-12 md:py-16 bg-section-alternate relative overflow-hidden" id="about">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -103,7 +103,7 @@ export default function AboutSection() {
 
       <div className="container relative">
         {/* Top Section */}
-        <div className="grid lg:grid-cols-2 gap-10 xl:gap-16 items-start mb-10">
+        <div className="grid lg:grid-cols-2 gap-10 xl:gap-16 items-center mb-10">
           {/* Left Column - About & Mission */}
           <motion.div
             ref={ref}
@@ -118,7 +118,7 @@ export default function AboutSection() {
                   Discover Our Story
                 </span>
               </div>
-              <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary via-blue-600 to-primary bg-clip-text text-transparent">
+              <h2 className="text-heading-2 mb-4 bg-gradient-to-r from-primary via-blue-600 to-primary bg-clip-text text-transparent">
                 About Us
               </h2>
               <p className="text-lg text-muted-foreground">

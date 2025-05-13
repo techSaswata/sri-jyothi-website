@@ -9,52 +9,84 @@ import { Settings, Zap, PenToolIcon as Tool, Cog, CuboidIcon as Cube, FileText, 
 
 const services = [
   {
-    icon: <Tool className="h-10 w-10" />,
-    title: "Repair Services",
+    icon: <Settings className="h-10 w-10" />,
+    title: "Engineering Services",
     description:
-      "Expert repair services for all types of industrial machinery and equipment to minimize downtime and maximize productivity.",
-    image: "/images/service4.jpg",
-    link: "/services/repair",
+      "Reliable and professional engineering support to help clients reduce downtime, improve safety, and handle changes smoothly.",
+    image: "/images/service1.jpg",
+    link: "/services/engineering",
   },
   {
     icon: <Cog className="h-10 w-10" />,
-    title: "Spare Parts",
+    title: "Reverse Engineering",
     description:
-      "Quality spare parts for industrial equipment, ensuring optimal performance and longevity of your machinery.",
+      "Fast and reliable solutions to reproduce spare parts that are hard to find or no longer available.",
+    image: "/images/service4.jpg",
+    link: "/services/reverse-engineering",
+  },
+  {
+    icon: <Tool className="h-10 w-10" />,
+    title: "Overhauling Services",
+    description:
+      "Erection, commissioning, maintenance, and overhauling services for the entire lifecycle of industrial equipment.",
+    image: "/images/service3.jpg",
+    link: "/services/overhauling",
+  },
+  {
+    icon: <Cube className="h-10 w-10" />,
+    title: "3D Scanning",
+    description:
+      "Precise digital models and technical drawings of existing mechanical components for spare parts development.",
+    image: "/images/3d-scan.jpg",
+    link: "/services/3d-scanning",
+  },
+  {
+    icon: <Settings className="h-10 w-10" />,
+    title: "Spares Manufacturing",
+    description:
+      "High-quality mechanical spares designed, manufactured, and delivered to keep your equipment running smoothly.",
     image: "/images/spares1.jpg",
     link: "/services/spare-parts",
   },
   {
-    icon: <Zap className="h-10 w-10" />,
-    title: "Energy Solutions",
+    icon: <Tool className="h-10 w-10" />,
+    title: "Repair Services",
     description:
-      "Innovative energy-saving solutions to reduce operational costs and environmental impact of your industrial processes.",
+      "Comprehensive repair, reconditioning, and refurbishment services for power and process industry equipment.",
+    image: "/images/service4.jpg",
+    link: "/services/repair",
+  },
+  {
+    icon: <Zap className="h-10 w-10" />,
+    title: "Energy Saving Services",
+    description:
+      "Expert efficiency consultancy to reduce fuel consumption and optimize performance in power plants.",
     image: "/images/service2.jpg",
     link: "/services/energy-solutions",
   },
   {
-    icon: <Cube className="h-10 w-10" />,
-    title: "3D Services",
+    icon: <FileText className="h-10 w-10" />,
+    title: "EDM Services",
     description:
-      "Advanced 3D modeling, printing, and scanning services for prototyping, reverse engineering, and product development.",
-    image: "/images/3d-scan.jpg",
-    link: "/services/3d-services",
+      "High-precision Electrical Discharge Machining for intricate shapes and fine details in hard materials.",
+    image: "/images/service3.jpg",
+    link: "/services/edm",
   },
   {
     icon: <Settings className="h-10 w-10" />,
-    title: "Maintenance",
+    title: "Bend Removal",
     description:
-      "Comprehensive preventive and corrective maintenance services to ensure smooth operation of your industrial equipment.",
+      "Precision shaft and turbine rotor bend removal to restore critical components to original specifications.",
     image: "/images/service1.jpg",
-    link: "/services/maintenance",
+    link: "/services/bend-removal",
   },
   {
-    icon: <FileText className="h-10 w-10" />,
-    title: "Consulting",
+    icon: <Cog className="h-10 w-10" />,
+    title: "Dynamic Balancing",
     description:
-      "Expert consulting services for industrial engineering challenges, process optimization, and efficiency improvement.",
-    image: "/images/service3.jpg",
-    link: "/services/consulting",
+      "Precision balancing services to improve performance, reliability, and safety of rotating equipment.",
+    image: "/images/service2.jpg",
+    link: "/services/dynamic-balancing",
   },
 ]
 
@@ -84,10 +116,10 @@ export default function ServicesSection() {
   }
 
   return (
-    <section className="section-padding py-12 md:py-16 bg-background" id="services">
+    <section className="section-padding py-12 md:py-16 bg-section-light" id="services">
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-10">
-          <h2 className="section-title mb-3">Our Engineering Services</h2>
+          <h2 className="section-title mb-3">SERVICES</h2>
           <p className="section-subtitle">
             We provide a comprehensive range of engineering services tailored to meet the specific needs of your
             industry and business.
@@ -117,11 +149,11 @@ export default function ServicesSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <div className="absolute bottom-4 left-4 text-white">
                   <div className="p-2 bg-primary rounded-lg inline-block mb-2">{service.icon}</div>
-                  <h3 className="text-xl font-bold">{service.title}</h3>
+                  <h3 className="text-heading-4">{service.title}</h3>
                 </div>
               </div>
               <div className="p-6">
-                <p className="text-muted-foreground mb-4">{service.description}</p>
+                <p className="text-body mb-4">{service.description}</p>
                 <Button variant="outline" size="sm" asChild className="group">
                   <Link href={service.link}>
                     Learn More

@@ -140,10 +140,10 @@ export default function ProjectsPage() {
       <section className="pt-20 pb-16 md:pt-24 md:pb-20 bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-950">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
+            <h1 className="text-heading-1 mb-6">
               Our <span className="gradient-text">Projects</span>
             </h1>
-            <p className="text-lg text-muted-foreground mb-6">
+            <p className="text-body-lg mb-6">
               Explore our portfolio of successful engineering projects across various industries. These case studies
               demonstrate our expertise, innovation, and commitment to excellence.
             </p>
@@ -217,7 +217,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* Featured Project Section */}
-      <section className="py-16 bg-gradient-secondary">
+      <section className="py-16 bg-section-alternate">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="section-title mb-4">Featured Project</h2>

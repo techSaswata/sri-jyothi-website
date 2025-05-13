@@ -26,7 +26,7 @@ export default function HeroSection() {
   }
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900 pt-10 pb-16">
+    <section className="relative overflow-hidden bg-section-light pt-10 pb-16">
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -58,11 +58,11 @@ export default function HeroSection() {
               transition={{ duration: 0.5, type: "spring", stiffness: 200 }}
               className="inline-block rounded-full bg-gradient-to-r from-primary/10 to-blue-500/10 px-4 py-1.5 text-sm font-medium text-primary mb-4 border border-primary/10 backdrop-blur-sm"
             >
-              Leading Engineering Solutions Provider
+              Innovating Engineering Solutions for Industrial Excellence
             </motion.div>
 
             <div className="relative">
-              <motion.h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 bg-clip-text">
+              <motion.h1 className="text-heading-1 mb-6 bg-clip-text">
                 <motion.span
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -87,10 +87,9 @@ export default function HeroSection() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.6 }}
-              className="text-xl text-muted-foreground mb-8 max-w-2xl lg:max-w-none mx-auto lg:mx-0"
+              className="text-body-lg mb-8 max-w-2xl lg:max-w-none mx-auto lg:mx-0"
             >
-              We provide comprehensive engineering services and solutions to optimize your industrial operations and
-              maximize efficiency.
+              is a leading engineering service and manufacturing company based in India, specializing in power, manufacturing, and industrial sectors. Our expertise spans across Erection, Commissioning, Maintenance, and Spares Manufacturing, ensuring high efficiency and reliability for industrial operations.
             </motion.p>
 
             <motion.div
