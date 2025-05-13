@@ -64,25 +64,71 @@ export default function AboutPage() {
       <section className="py-16 bg-background">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <h2 className="text-3xl font-bold mb-4">Our Vision</h2>
+            <h2 className="text-3xl font-bold mb-4">Our Core Philosophy</h2>
             <p className="text-lg">
-              At SRI JYOTHI ENGINEERING SERVICES, our vision is to be the most trusted specialist services group in the delivery of Erection, Commissioning, Maintenance, and Manufacture & Supply of spares.
+              The guiding principles that drive our work and relationships with clients
             </p>
-            <div className="h-1 w-20 bg-primary mx-auto mt-6"></div>
           </div>
           
-          {/* Vision Image - Horizontal Container */}
-          <div className="w-full max-w-4xl mx-auto rounded-xl overflow-hidden shadow-lg border border-primary/10 mb-12 p-2 bg-white">
-            <div className="relative w-full" style={{ height: "300px" }}>
-              <Image
-                src="/images/vision.png"
-                alt="Sri Jyothi Engineering Vision"
-                fill
-                className="object-contain"
-                sizes="(max-width: 768px) 100vw, 800px"
-                priority
-                quality={100}
-              />
+          {/* Mission, Vision, Values Section */}
+          <div className="py-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+              {/* Mission */}
+              <div className="flex flex-col items-center text-center">
+                <div className="rounded-full bg-red-50 p-5 mb-6 inline-block shadow-sm">
+                  <Image 
+                    src="/images/icons/mission-alt.svg" 
+                    alt="Our Mission" 
+                    width={52} 
+                    height={52}
+                    className="text-red-600"
+                  />
+                </div>
+                <h3 className="text-xl font-bold mb-4">
+                  <span className="text-red-600">OUR</span> MISSION
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  To provide innovative and sustainable engineering solutions that enhance operational efficiency, reduce costs, and contribute to the success of our clients' businesses.
+                </p>
+              </div>
+
+              {/* Vision */}
+              <div className="flex flex-col items-center text-center">
+                <div className="rounded-full bg-teal-50 p-5 mb-6 inline-block shadow-sm">
+                  <Image 
+                    src="/images/icons/vision-alt.svg" 
+                    alt="Our Vision" 
+                    width={52} 
+                    height={52}
+                    className="text-teal-600"
+                  />
+                </div>
+                <h3 className="text-xl font-bold mb-4">
+                  <span className="text-teal-600">OUR</span> VISION
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  To be the most trusted specialist services group in the delivery of Erection, Commissioning, Maintenance, and Manufacture & Supply of spares.
+                </p>
+              </div>
+
+              {/* Values */}
+              <div className="flex flex-col items-center text-center">
+                <div className="rounded-full bg-amber-50 p-5 mb-6 inline-block shadow-sm">
+                  <Image 
+                    src="/images/icons/values.svg" 
+                    alt="Our Values" 
+                    width={52} 
+                    height={52}
+                    className="text-amber-500"
+                  />
+                </div>
+                <h3 className="text-xl font-bold mb-4">
+                  <span className="text-amber-500">OUR</span> VALUES
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Excellence in everything we do, integrity in our business practices, innovation in our solutions, and a relentless commitment to safety and quality.
+                </p>
+              </div>
             </div>
           </div>
 
