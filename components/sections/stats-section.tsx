@@ -12,15 +12,15 @@ const stats = [
   // },
   {
     icon: <Award className="h-8 w-8" />,
-    value: "24+",
-    label: "Years of Expertise",
-    description: "in industrial engineering",
+    value: "22+",
+    label: "Years of Experience",
+    description: "Delivering Excellence in engineering since 2008",
   },
   {
     icon: <Clock className="h-8 w-8" />,
     value: "24/7",
-    label: "Innovation",
-    description: "Innovative & Cost-Effective Solutions",
+    label: "Support",
+    description: "Round-the-clock assistance for all your engineering needs",
   },
   // {
   //   icon: <Briefcase className="h-8 w-8" />,
@@ -32,12 +32,12 @@ const stats = [
     icon: <Globe className="h-8 w-8" />,
     value: "15+",
     label: "Industries Served",
-    description: "Reliable, Precision-Engineered Components",
+    description: "Providing engineering solutions to a wide range of industries",
   },
   {
     icon: <ThumbsUp className="h-8 w-8" />,
-    value: "100%",
-    label: "Customer Focus",
+    value: "99%",
+    label: "Client Satisfaction",
     description: "Customer-First Approach for Tailored Solutions",
   },
 ]
@@ -69,7 +69,7 @@ export default function StatsSection() {
     <section className="bg-section-light py-12 md:py-20">
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-10">
-           <h2 className="section-title mb-3">Why Choose SRI JYOTHI ENGINEERING SERVICES?</h2>
+           <h2 className="section-title mb-3">Our Imapct in Numbers</h2>
           <p className="section-subtitle">
             Our Vision: To provide world-class engineering solutions that enhance asset performance, reduce operational costs, and maximize reliability.
           </p>
