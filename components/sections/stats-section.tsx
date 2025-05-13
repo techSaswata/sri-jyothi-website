@@ -66,10 +66,10 @@ export default function StatsSection() {
   }
 
   return (
-    <section className="bg-gradient-secondary py-20 md:py-32">
+    <section className="bg-gradient-secondary py-12 md:py-20">
       <div className="container">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-           <h2 className="section-title mb-4">Our Impact in Numbers</h2>
+        <div className="text-center max-w-3xl mx-auto mb-10">
+           <h2 className="section-title mb-3">Our Impact in Numbers</h2>
           <p className="section-subtitle">
             We take pride in our achievements and the trust our clients place in us. Here's a glimpse of our journey in
             numbers.
@@ -79,22 +79,22 @@ export default function StatsSection() {
         <motion.div
           variants={containerVariants}
           initial="hidden"
-          whileInView="visible" // Use whileInView for simple entrance animation
-          viewport={{ once: true, amount: 0.2 }} // Configure viewport options
-          className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6 max-w-7xl mx-auto"
         >
           {stats.map((stat, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
-              className="bg-background rounded-xl p-8 shadow-sm border card-hover flex flex-col items-center text-center"
+              className="bg-background rounded-xl p-5 shadow-sm border card-hover flex flex-col items-center text-center"
             >
-              <div className="p-4 rounded-lg bg-primary/10 text-primary mb-4">{stat.icon}</div>
-              <div className="text-4xl font-bold text-primary mb-2">
-                {stat.value} {/* Display static value directly */}
+              <div className="p-3 rounded-lg bg-primary/10 text-primary mb-3">{stat.icon}</div>
+              <div className="text-3xl font-bold text-primary mb-1">
+                {stat.value}
               </div>
-              <div className="font-medium text-lg mb-3">{stat.label}</div>
-              <p className="text-sm text-muted-foreground">{stat.description}</p>
+              <div className="font-medium text-base mb-2">{stat.label}</div>
+              <p className="text-xs text-muted-foreground">{stat.description}</p>
             </motion.div>
           ))}
         </motion.div>

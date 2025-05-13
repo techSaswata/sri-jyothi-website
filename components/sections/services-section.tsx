@@ -84,10 +84,10 @@ export default function ServicesSection() {
   }
 
   return (
-    <section className="section-padding bg-background" id="services">
+    <section className="section-padding py-12 md:py-16 bg-background" id="services">
       <div className="container">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="section-title mb-4">Our Engineering Services</h2>
+        <div className="text-center max-w-3xl mx-auto mb-10">
+          <h2 className="section-title mb-3">Our Engineering Services</h2>
           <p className="section-subtitle">
             We provide a comprehensive range of engineering services tailored to meet the specific needs of your
             industry and business.
@@ -133,7 +133,7 @@ export default function ServicesSection() {
           ))}
         </motion.div>
 
-        <div className="mt-16 text-center">
+        <div className="mt-10 text-center">
           <Button size="lg" asChild>
             <Link href="/services">
               View All Services
