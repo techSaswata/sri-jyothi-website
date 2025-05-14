@@ -139,21 +139,21 @@ export default function AboutSection() {
                 variants={textRevealVariants}
                 className="text-lg text-muted-foreground mb-4"
               >
-                SJES is a leading India-based engineering service and manufacturing company specializing in high-capacity production environments across various industries, with particular expertise in the Energy sector.
+              SJES is a leading India-based engineering service and manufacturing company specializing in high-capacity production environments across various industries, with particular expertise in the Energy sector.
               </motion.p>
               
               <motion.p 
                 variants={textRevealVariants}
                 className="text-lg text-muted-foreground mb-4"
               >
-                With an impressive and growing client list, SJES has built a reputation for exceptional customer service, technical expertise, reliability, and quality engineering outcomes.
+              With an impressive and growing client list, SJES has built a reputation for exceptional customer service, technical expertise, reliability, and quality engineering outcomes.
               </motion.p>
               
               <motion.p 
                 variants={textRevealVariants}
                 className="text-lg text-muted-foreground"
               >
-                Our vision is to be the most trusted specialist services group in the delivery of Erection, Commissioning, Maintenance, and Manufacture & Supply of spares.
+              Our vision is to be the most trusted specialist services group in the delivery of Erection, Commissioning, Maintenance, and Manufacture & Supply of spares.
               </motion.p>
             </motion.div>
           </motion.div>
@@ -217,7 +217,7 @@ export default function AboutSection() {
             >
               <Link href="/about">
                 <span className="relative z-10 flex items-center">
-                  Learn More About Us
+                Learn More About Us
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </span>
                 <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>

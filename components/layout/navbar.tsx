@@ -230,7 +230,7 @@ export default function Navbar() {
               </div>
               <div className="hidden xl:block text-sm mt-1">
                 <Mail className="h-4 w-4 text-primary mb-1 inline-block" />
-                <span className="font-medium ml-2">sjes331@gmail.com</span>
+                <span className="font-medium ml-2">techcom@srijyothi.com</span>
               </div>
             </div>
             <Button size="sm" asChild>

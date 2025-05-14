@@ -54,6 +54,36 @@ const solutions = [
     ],
   },
   {
+    id: "paper-pulp",
+    title: "Paper & Pulp",
+    description:
+      "Precision solutions for paper and pulp plant optimization, focusing on machine efficiency and reliability for consistent production.",
+    image: "/Web Pics1/Equipment/Vacuum pump services-1.jpg",
+    features: [
+      "Pulp processing equipment maintenance",
+      "Paper machine optimization",
+      "Vacuum system servicing",
+      "Drying system efficiency improvements",
+      "Precision component manufacturing",
+      "Preventive maintenance programs",
+    ],
+  },
+  {
+    id: "chemicals",
+    title: "Fertilizers & Chemicals",
+    description:
+      "High-performance industrial equipment maintenance and solutions for chemical processing and fertilizer production facilities.",
+    image: "/Web Pics1/Equipment/filters.jpg",
+    features: [
+      "Reactor maintenance and repair",
+      "Pump and compressor servicing",
+      "Heat exchanger maintenance",
+      "Filtration system optimization",
+      "Corrosion prevention solutions",
+      "Safety and compliance upgrades",
+    ],
+  },
+  {
     id: "infrastructure",
     title: "Infrastructure",
     description:
@@ -97,7 +127,7 @@ export default function SolutionsSection() {
 
         <motion.div ref={ref} variants={containerVariants} initial="hidden" animate={isInView ? "visible" : "hidden"}>
           <Tabs defaultValue="manufacturing" className="w-full">
-            <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2 bg-transparent h-auto p-0 mb-8">
+            <TabsList className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 bg-transparent h-auto p-0 mb-8">
               {solutions.map((solution) => (
                 <TabsTrigger
                   key={solution.id}
@@ -116,9 +146,16 @@ export default function SolutionsSection() {
                     <h3 className={`text-2xl font-bold mb-4 ${solution.id === 'manufacturing' ? 'md:text-3xl' : ''}`}>
                       {solution.title} Solutions
                     </h3>
-                    <p className={`text-muted-foreground mb-6 ${solution.id === 'manufacturing' ? 'text-lg' : ''}`}>
+                    <p className={`text-muted-foreground mb-6 ${solution.id === 'manufacturing' || solution.id === 'paper-pulp' ? 'text-lg' : ''}`}>
                       {solution.description}
                     </p>
+                    
+                    {solution.id === 'paper-pulp' && (
+                      <p className="text-lg text-muted-foreground mb-6">
+                        Our specialized services for the paper and pulp industry include maintenance of critical production equipment,
+                        precision component manufacturing, and optimization of processes to enhance efficiency and product quality.
+                      </p>
+                    )}
 
                     {solution.id === 'manufacturing' ? (
                       <div className="grid grid-cols-1 gap-4 mb-8">
@@ -145,7 +182,7 @@ export default function SolutionsSection() {
                   </div>
 
                   <div className="order-1 md:order-2">
-                    <div className="relative rounded-xl overflow-hidden shadow-lg">
+                    <div className={`relative rounded-xl overflow-hidden shadow-lg ${solution.id === 'paper-pulp' ? 'md:w-4/5 lg:w-3/4 mx-auto' : 'w-full'}`}>
                       <Image
                         src={solution.image || "/placeholder.svg"}
                         alt={solution.title}
