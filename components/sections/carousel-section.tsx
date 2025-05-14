@@ -7,8 +7,7 @@ import Image from 'next/image';
 const images = [
   '/Web Pics1/Home page/Home-Header-4.jpg',
   '/Web Pics1/Home page/Home Header-1.webp',
-  '/Web Pics1/Home page/Home Header-2.jpg',
-  '/Web Pics1/Home page/Home Header-3.jpg.png',
+  
   '/Web Pics1/Home page/Home-Header-5.jpeg',
 ];
 

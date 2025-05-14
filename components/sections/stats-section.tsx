@@ -1,7 +1,8 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, useInView } from "framer-motion"
 import { Award, Clock, Globe, ThumbsUp } from "lucide-react"
+import { useEffect, useRef, useState } from "react"
 
 const stats = [
   // {
@@ -12,8 +13,9 @@ const stats = [
   // },
   {
     icon: <Award className="h-8 w-8" />,
-    value: "22+",
-    label: "Years of Experience",
+    value: 140,
+    suffix: "+",
+    label: "Companies Served",
     description: "Delivering Excellence in engineering since 2008",
   },
   {
@@ -30,17 +32,53 @@ const stats = [
   // },
   {
     icon: <Globe className="h-8 w-8" />,
-    value: "15+",
+    value: 15,
+    suffix: "+",
     label: "Industries Served",
     description: "Providing engineering solutions to a wide range of industries",
   },
   {
     icon: <ThumbsUp className="h-8 w-8" />,
-    value: "99%",
+    value: 99,
+    suffix: "%",
     label: "Client Satisfaction",
     description: "Customer-First Approach for Tailored Solutions",
   },
 ]
+
+interface CounterProps {
+  value: number | string;
+  suffix?: string;
+  duration?: number;
+}
+
+const Counter = ({ value, suffix = "", duration = 2000 }: CounterProps) => {
+  const [count, setCount] = useState(0)
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true })
+
+  useEffect(() => {
+    if (isInView && typeof value === 'number') {
+      let start = 0
+      const end = value
+      const incrementTime = duration / end
+      const counter = setInterval(() => {
+        start += 1
+        setCount(start)
+        if (start === end) clearInterval(counter)
+      }, incrementTime)
+
+      return () => clearInterval(counter)
+    }
+  }, [isInView, value, duration])
+
+  return (
+    <span ref={ref} className="text-3xl font-bold text-primary">
+      {typeof value === 'number' ? count : value}
+      {suffix}
+    </span>
+  )
+}
 
 export default function StatsSection() {
   // No animation state or logic needed anymore
@@ -89,9 +127,7 @@ export default function StatsSection() {
               className="bg-background rounded-xl p-5 shadow-sm border card-hover flex flex-col items-center text-center"
             >
               <div className="p-3 rounded-lg bg-primary/10 text-primary mb-3">{stat.icon}</div>
-              <div className="text-3xl font-bold text-primary mb-1">
-                {stat.value}
-              </div>
+              <Counter value={stat.value} suffix={stat.suffix} />
               <div className="font-medium text-base mb-2">{stat.label}</div>
               <p className="text-body-sm">{stat.description}</p>
             </motion.div>

@@ -5,7 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { ChevronRight } from "lucide-react"
+import { ChevronRight, Globe } from "lucide-react"
 
 export default function HeroSection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -96,7 +96,7 @@ export default function HeroSection() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.8 }}
-              className="mb-8"
+              className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start"
             >
               <Button
                 size="lg"
@@ -108,6 +108,16 @@ export default function HeroSection() {
                   <ChevronRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
+              
+              <div className="flex items-center gap-3 bg-background/80 backdrop-blur-sm rounded-full px-4 py-2 border shadow-sm">
+                <div className="p-2 rounded-full bg-primary/10">
+                  <Globe className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <div className="font-semibold text-lg">22+</div>
+                  <div className="text-sm text-muted-foreground">Countries Served</div>
+                </div>
+              </div>
             </motion.div>
           </motion.div>
 
