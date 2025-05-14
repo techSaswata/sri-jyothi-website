@@ -26,86 +26,79 @@ export default function HeroSection() {
   }
 
   return (
-    <section className="relative overflow-hidden bg-section-light pt-10 pb-16">
-      {/* Enhanced Background Elements */}
+    <section className="relative overflow-hidden bg-section-light pt-16 pb-12">
+      {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           initial={{ opacity: 0, scale: 0.5, rotate: -90 }}
           animate={{ opacity: 0.15, scale: 1, rotate: 0 }}
           transition={{ duration: 2, ease: "easeOut" }}
-          className="absolute -right-40 -top-40 h-[600px] w-[600px] rounded-full bg-gradient-to-br from-primary/40 to-blue-500/40 blur-3xl"
+          className="absolute -right-40 -top-40 h-[400px] w-[400px] rounded-full bg-gradient-to-br from-primary/40 to-blue-500/40 blur-3xl"
         />
         <motion.div
           initial={{ opacity: 0, scale: 0.5, rotate: 90 }}
           animate={{ opacity: 0.15, scale: 1, rotate: 0 }}
           transition={{ duration: 2, delay: 0.3, ease: "easeOut" }}
-          className="absolute -bottom-40 -left-40 h-[600px] w-[600px] rounded-full bg-gradient-to-tr from-primary/40 to-blue-500/40 blur-3xl"
+          className="absolute -bottom-40 -left-40 h-[400px] w-[400px] rounded-full bg-gradient-to-tr from-primary/40 to-blue-500/40 blur-3xl"
         />
       </div>
 
       <div className="container relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Text Content */}
+        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
+          {/* Text Content - Takes 3 columns */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="text-center lg:text-left relative"
+            className="lg:col-span-3 text-left relative"
           >
-            <motion.div
-              initial={{ scale: 0.5, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.5, type: "spring", stiffness: 200 }}
-              className="inline-block rounded-full bg-gradient-to-r from-primary/10 to-blue-500/10 px-4 py-1.5 text-sm font-medium text-primary mb-4 border border-primary/10 backdrop-blur-sm"
+            <motion.h1 
+              className="text-4xl md:text-5xl font-bold mb-6"
             >
-              Innovating Engineering Solutions for Industrial Excellence
-            </motion.div>
-
-            <div className="relative">
-              <motion.h1 className="text-heading-1 mb-6 bg-clip-text">
-                <motion.span
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7, delay: 0.2 }}
-                  className="inline-block bg-gradient-to-r from-primary via-blue-600 to-primary bg-clip-text text-transparent"
-                >
-                  Sri Jyothi
-                </motion.span>
-                <br />
-                <motion.span
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7, delay: 0.4 }}
-                  className="inline-block text-slate-800 dark:text-slate-200"
-                >
-                  Engineering Services
-                </motion.span>
-              </motion.h1>
-            </div>
+              <motion.span
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.2 }}
+                className="bg-gradient-to-r from-primary via-blue-600 to-primary bg-clip-text text-transparent"
+              >
+                Sri Jyothi
+              </motion.span>{" "}
+              <motion.span
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.4 }}
+                className="text-slate-800 dark:text-slate-200"
+              >
+                Engineering Services
+              </motion.span>
+            </motion.h1>
 
             <motion.p
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.6 }}
-              className="text-body-lg mb-8 max-w-2xl lg:max-w-none mx-auto lg:mx-0"
+              className="text-lg text-muted-foreground mb-8 max-w-2xl"
             >
-              is a leading engineering service and manufacturing company based in India, specializing in power, manufacturing, and industrial sectors. Our expertise spans across Erection, Commissioning, Maintenance, and Spares Manufacturing, ensuring high efficiency and reliability for industrial operations.
+              A leading engineering service and manufacturing company based in India, specializing in power, manufacturing, and industrial sectors. Our expertise spans across Erection, Commissioning, Maintenance, and Spares Manufacturing.
             </motion.p>
 
             <motion.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.8 }}
-              className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start"
+              className="flex flex-col sm:flex-row items-center gap-4 sm:justify-start"
             >
               <Button
                 size="lg"
                 asChild
-                className="text-lg px-8 bg-gradient-to-r from-primary to-blue-600 hover:from-primary/90 hover:to-blue-600/90 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
+                className="text-lg px-8 bg-gradient-to-r from-primary to-blue-600 hover:from-blue-600 hover:to-primary shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-0.5 w-full sm:w-auto relative overflow-hidden group"
               >
                 <Link href="/services">
-                  Get Started
-                  <ChevronRight className="ml-2 h-5 w-5" />
+                  <span className="relative z-10 flex items-center">
+                    Get Started
+                    <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  </span>
+                  <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
                 </Link>
               </Button>
               
@@ -121,12 +114,12 @@ export default function HeroSection() {
             </motion.div>
           </motion.div>
 
-          {/* Hero Image */}
+          {/* Hero Image - Takes 2 columns */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={isVisible ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="relative aspect-[4/3] lg:aspect-square"
+            className="lg:col-span-2 relative aspect-[4/3]"
           >
             <motion.div
               initial={{ scale: 0.95, opacity: 0 }}
@@ -140,7 +133,7 @@ export default function HeroSection() {
                 fill
                 className="object-cover object-center transform hover:scale-105 transition-transform duration-700"
                 priority
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 768px) 100vw, 40vw"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent mix-blend-overlay" />
               
@@ -160,13 +153,13 @@ export default function HeroSection() {
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.8 }}
-              className="absolute -right-4 -bottom-4 w-32 h-32 bg-gradient-to-br from-primary/20 to-blue-500/20 rounded-full blur-xl"
+              className="absolute -right-4 -bottom-4 w-24 h-24 bg-gradient-to-br from-primary/20 to-blue-500/20 rounded-full blur-xl"
             />
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 1 }}
-              className="absolute -left-4 -top-4 w-32 h-32 bg-gradient-to-tr from-primary/20 to-blue-500/20 rounded-full blur-xl"
+              className="absolute -left-4 -top-4 w-24 h-24 bg-gradient-to-tr from-primary/20 to-blue-500/20 rounded-full blur-xl"
             />
           </motion.div>
         </div>

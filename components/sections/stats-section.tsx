@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, useInView } from "framer-motion"
+import { motion, useInView, useAnimation } from "framer-motion"
 import { Award, Clock, Globe, ThumbsUp } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
 
@@ -55,7 +55,7 @@ interface CounterProps {
 const Counter = ({ value, suffix = "", duration = 2000 }: CounterProps) => {
   const [count, setCount] = useState(0)
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   useEffect(() => {
     if (isInView && typeof value === 'number') {
@@ -81,55 +81,96 @@ const Counter = ({ value, suffix = "", duration = 2000 }: CounterProps) => {
 }
 
 export default function StatsSection() {
-  // No animation state or logic needed anymore
+  const controls = useAnimation()
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, amount: 0.2 })
+  
+  useEffect(() => {
+    if (isInView) {
+      controls.start("visible")
+    }
+  }, [controls, isInView])
 
   const containerVariants = {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.1,
+        staggerChildren: 0.2,
       },
     },
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.5,
+        type: "spring",
+        stiffness: 100,
+        damping: 12,
+        duration: 0.6
       },
     },
   }
 
+  const titleVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  }
+
   return (
-    <section className="bg-section-light py-12 md:py-20">
+    <section ref={ref} className="bg-section-light py-16 md:py-20">
       <div className="container">
-        <div className="text-center max-w-3xl mx-auto mb-10">
-           <h2 className="section-title mb-3">Our Imapct in Numbers</h2>
-          <p className="section-subtitle">
-            Our Vision: To provide world-class engineering solutions that enhance asset performance, reduce operational costs, and maximize reliability.
+        <motion.div 
+          initial="hidden"
+          animate={controls}
+          variants={titleVariants}
+          className="text-center max-w-3xl mx-auto mb-12"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 bg-gradient-to-r from-primary via-blue-600 to-primary bg-clip-text text-transparent">
+            Our Impact in Numbers
+          </h2>
+          <p className="text-lg text-muted-foreground">
+            Our vision: To provide world-class engineering solutions that enhance asset performance, reduce operational costs, and maximize reliability.
           </p>
-        </div>
+        </motion.div>
 
         <motion.div
           variants={containerVariants}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6 max-w-7xl mx-auto"
+          animate={controls}
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8 max-w-7xl mx-auto"
         >
           {stats.map((stat, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
-              className="bg-background rounded-xl p-5 shadow-sm border card-hover flex flex-col items-center text-center"
+              whileHover={{ 
+                scale: 1.03,
+                boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+                borderColor: "rgba(59, 130, 246, 0.5)"
+              }}
+              className="bg-background rounded-xl p-6 shadow-md border border-primary/10 transition-all duration-300 flex flex-col items-center text-center"
             >
-              <div className="p-3 rounded-lg bg-primary/10 text-primary mb-3">{stat.icon}</div>
+              <motion.div 
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="p-3 rounded-lg bg-primary/10 text-primary mb-4"
+              >
+                {stat.icon}
+              </motion.div>
               <Counter value={stat.value} suffix={stat.suffix} />
-              <div className="font-medium text-base mb-2">{stat.label}</div>
-              <p className="text-body-sm">{stat.description}</p>
+              <div className="font-medium text-lg mb-2">{stat.label}</div>
+              <p className="text-muted-foreground">{stat.description}</p>
             </motion.div>
           ))}
         </motion.div>

@@ -35,10 +35,17 @@ export default function CustomEquipmentCta() {
               <p className="text-sm text-muted-foreground mb-6">
                 Contact us today to discuss your specific requirements for equipment spares, repairs, or maintenance services.
               </p>
-              <Button size="default" asChild>
+              <Button 
+                size="default" 
+                asChild
+                className="bg-gradient-to-r from-primary to-blue-600 hover:from-blue-600 hover:to-primary shadow-md hover:shadow-lg transition-all duration-500 hover:-translate-y-0.5 relative overflow-hidden group"
+              >
                 <Link href="/contact">
-                  Request a Quote
-                  <ArrowRight className="ml-2 h-3 w-3" />
+                  <span className="relative z-10 flex items-center">
+                    Request a Quote
+                    <ArrowRight className="ml-2 h-3 w-3 group-hover:translate-x-1 transition-transform duration-300" />
+                  </span>
+                  <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
                 </Link>
               </Button>
             </div>
