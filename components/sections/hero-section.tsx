@@ -44,32 +44,25 @@ export default function HeroSection() {
       </div>
 
       <div className="container relative z-10">
-        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
+        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 xl:gap-20 items-center">
           {/* Text Content - Takes 3 columns */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-3 text-left relative"
+            className="lg:col-span-3 text-left relative pr-4 lg:pr-8"
           >
             <motion.h1 
-              className="text-4xl md:text-5xl font-bold mb-6"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-6 leading-tight"
             >
               <motion.span
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.2 }}
-                className="bg-gradient-to-r from-primary via-blue-600 to-primary bg-clip-text text-transparent"
+                className="whitespace-nowrap"
               >
-                Sri Jyothi
-              </motion.span>{" "}
-              <motion.span
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.4 }}
-                className="text-slate-800 dark:text-slate-200"
-              >
-                Engineering Services
+                <span className="bg-gradient-to-r from-primary via-blue-600 to-primary bg-clip-text text-transparent">Sri Jyothi</span>{" "}
+                <span className="text-slate-800 dark:text-slate-200">Engineering Services</span>
               </motion.span>
             </motion.h1>
 
@@ -77,7 +70,7 @@ export default function HeroSection() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.6 }}
-              className="text-lg text-muted-foreground mb-8 max-w-2xl"
+              className="text-lg text-muted-foreground mb-8 max-w-2xl leading-relaxed"
             >
               A leading engineering service and manufacturing company based in India, specializing in power, manufacturing, and industrial sectors. Our expertise spans across Erection, Commissioning, Maintenance, and Spares Manufacturing.
             </motion.p>
@@ -86,12 +79,12 @@ export default function HeroSection() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.8 }}
-              className="flex flex-col sm:flex-row items-center gap-4 sm:justify-start"
+              className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:justify-start"
             >
               <Button
                 size="lg"
                 asChild
-                className="text-lg px-8 bg-gradient-to-r from-primary to-blue-600 hover:from-blue-600 hover:to-primary shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-0.5 w-full sm:w-auto relative overflow-hidden group"
+                className="text-lg px-8 py-3 bg-gradient-to-r from-primary to-blue-600 hover:from-blue-600 hover:to-primary shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-0.5 w-full sm:w-auto relative overflow-hidden group"
               >
                 <Link href="/services">
                   <span className="relative z-10 flex items-center">
@@ -102,13 +95,13 @@ export default function HeroSection() {
                 </Link>
               </Button>
               
-              <div className="flex items-center gap-3 bg-background/80 backdrop-blur-sm rounded-full px-4 py-2 border shadow-sm">
+              <div className="flex items-center gap-3 bg-background/80 backdrop-blur-sm rounded-full px-6 py-3 border shadow-sm">
                 <div className="p-2 rounded-full bg-primary/10">
                   <Globe className="h-5 w-5 text-primary" />
                 </div>
                 <div>
                   <div className="font-semibold text-lg">22+</div>
-                  <div className="text-sm text-muted-foreground">Countries Served</div>
+                  <div className="text-sm text-muted-foreground">Years Experience</div>
                 </div>
               </div>
             </motion.div>
@@ -119,13 +112,13 @@ export default function HeroSection() {
             initial={{ opacity: 0, x: 50 }}
             animate={isVisible ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="lg:col-span-2 relative aspect-[4/3]"
+            className="lg:col-span-2 relative aspect-[4/3] pl-4 lg:pl-8"
           >
             <motion.div
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 1 }}
-              className="relative h-full rounded-2xl overflow-hidden shadow-2xl"
+              className="relative h-full rounded-2xl overflow-hidden shadow-2xl border-2 border-primary/10"
             >
               <Image
                 src="/Web Pics1/Services/BFP/Services- BFP replacement.jpg"
@@ -153,13 +146,13 @@ export default function HeroSection() {
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.8 }}
-              className="absolute -right-4 -bottom-4 w-24 h-24 bg-gradient-to-br from-primary/20 to-blue-500/20 rounded-full blur-xl"
+              className="absolute -right-6 -bottom-6 w-28 h-28 bg-gradient-to-br from-primary/20 to-blue-500/20 rounded-full blur-xl"
             />
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 1 }}
-              className="absolute -left-4 -top-4 w-24 h-24 bg-gradient-to-tr from-primary/20 to-blue-500/20 rounded-full blur-xl"
+              className="absolute -left-6 -top-6 w-28 h-28 bg-gradient-to-tr from-primary/20 to-blue-500/20 rounded-full blur-xl"
             />
           </motion.div>
         </div>

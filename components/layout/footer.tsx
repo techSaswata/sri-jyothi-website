@@ -43,7 +43,7 @@ export default function Footer() {
                 <div>
                   <h1 className="text-lg font-bold leading-tight">
                     Sri Jyothi
-                    <span className="block text-sm font-medium text-muted-foreground">Engineering Services</span>
+                    <span className="text-sm font-medium text-muted-foreground ml-1">Engineering Services</span>
                   </h1>
                 </div>
               </Link>
