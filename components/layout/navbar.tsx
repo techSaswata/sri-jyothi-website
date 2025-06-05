@@ -153,7 +153,7 @@ export default function Navbar() {
           <div className="hidden sm:block">
             <h1 className="text-base font-bold leading-tight">
               Sri Jyothi
-              <span className="block text-xs font-medium text-muted-foreground">Engineering Services</span>
+              <span className="text-xs font-medium text-muted-foreground ml-1">Engineering Services</span>
             </h1>
           </div>
         </Link>
@@ -261,7 +261,7 @@ export default function Navbar() {
                       height={60}
                       className="h-16 w-auto"
                     />
-                    <span className="font-bold">Sri Jyothi</span>
+                    <span className="font-bold">Sri Jyothi<span className="text-sm font-medium text-muted-foreground ml-1">Engineering Services</span></span>
                   </Link>
                 </div>
                 <nav className="flex-1 overflow-auto py-6">
